@@ -7,7 +7,7 @@
     <meta name="description" content="Ecografía en terreno, mamografía móvil y exámenes GES para municipalidades, hospitales y empresas en todo Chile. Más de 10 años de experiencia.">
     <link rel="canonical" href="https://examenesdigitales.cl/">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <!-- Open Graph / WhatsApp / Redes -->
     <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
     <meta name="theme-color" content="#0c73ba" />
     
     <!-- Tailwind CSS compilado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     
     <!-- Lucide Icons -->
     <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
@@ -66,60 +66,6 @@
     }
     </script>
 
-    <!-- Estilos y Animaciones Personalizadas -->
-    <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-marquee { display: flex; animation: marquee 30s linear infinite; }
-        
-        .glass-effect { 
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255,255,255,0.3); 
-        }
-
-        /* Comportamiento dinámico del menú al hacer scroll */
-        header { transition: all 0.5s ease; }
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-        header:not(.scrolled) { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-        
-        /* Colores de texto del menú */
-        header.scrolled .nav-text { color: #163A5F; }
-        header:not(.scrolled) .nav-text { color: white; }
-        header.scrolled .nav-subtext { color: #1E5F74; }
-        header:not(.scrolled) .nav-subtext { color: #BFDBFE; }
-        
-        /* Efecto subrayado en hover */
-        .nav-link-hover { position: relative; }
-        .nav-link-hover::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 2px; background-color: #55c5e9;
-            transition: all 0.3s ease;
-        }
-        .nav-link-hover:hover::after { width: 100%; }
-        
-        html { scroll-behavior: smooth; }
-    </style>
 </head>
 <body class="font-sans text-[#4B5563] antialiased bg-[#F8FAFC] selection:bg-[#55c5e9] selection:text-white overflow-x-hidden">
 
@@ -137,9 +83,7 @@
     <!-- Header & Navegación -->
     <header id="main-header" class="fixed w-full top-0 z-40 bg-transparent">
         <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
-            
-            <!-- Logo Corporativo -->
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="scrollToSection('inicio')">
+            <a href="/" class="flex items-center gap-3 cursor-pointer group">
                 <div class="relative w-12 h-12 flex items-center justify-center transition-transform duration-500 group-hover:rotate-180">
                     <div class="absolute inset-0 border-[4px] border-[#55c5e9] rounded-full border-r-transparent rotate-45"></div>
                     <div class="absolute inset-2 border-[4px] border-[#0c73ba] rounded-full border-r-transparent rotate-45"></div>
@@ -148,50 +92,44 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">
-                        Exámenes <span class="text-[#55c5e9]">Digitales</span>
-                    </span>
-                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">
-                        Estamos donde nos necesite
-                    </span>
+                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
+                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">Estamos donde nos necesite</span>
                 </div>
-            </div>
+            </a>
 
             <!-- Nav Desktop -->
-            <nav class="hidden lg:flex items-center gap-7 font-semibold nav-text transition-colors">
-                <button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</button>
-                <button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</button>
-                <button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Equipamiento</button>
-                <button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Clínica Móvil</button>
-                <button onclick="scrollToSection('institucional')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</button>
-                <button onclick="scrollToSection('contacto')" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">
-                    Cotizar Proyecto
-                </button>
+            <nav class="hidden lg:flex items-center gap-6 font-semibold nav-text transition-colors text-sm">
+                <a href="/#nosotros" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</a>
+                <a href="/#servicios" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</a>
+                <a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Mamografía Móvil</a>
+                <a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Exámenes GES</a>
+                <a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</a>
+                <a href="/blog/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Blog</a>
+                <a href="/#contacto" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">Cotizar Proyecto</a>
             </nav>
 
             <!-- Botón Mobile -->
-            <button class="lg:hidden nav-text transition-colors" onclick="toggleMenu()">
-                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            <button id="menu-toggle" class="lg:hidden nav-text transition-colors" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
 
         <!-- Menu Mobile Desplegable -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-6 animate-fade-in-up">
-            <button onclick="scrollToSection('nosotros')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</button>
-            <button onclick="scrollToSection('servicios')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios y Especialidades</button>
-            <button onclick="scrollToSection('equipamiento')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Equipamiento y Tecnología</button>
-            <button onclick="scrollToSection('movil')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</button>
-            <button onclick="scrollToSection('institucional')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Convenios Institucionales</button>
-            <button onclick="scrollToSection('contacto')" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-4 shadow-lg">
-                Contactar a Comercial
-            </button>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-5 animate-fade-in-up">
+            <a href="/#nosotros" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</a>
+            <a href="/#servicios" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios</a>
+            <a href="/mamografia-movil/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</a>
+            <a href="/examenes-ges/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Exámenes GES</a>
+            <a href="/convenios-institucionales/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Institucional</a>
+            <a href="/blog/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Blog</a>
+            <a href="/#contacto" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-3 shadow-lg">Contactar a Comercial</a>
         </div>
     </header>
 
     <!-- Hero Section Premium -->
     <section id="inicio" class="relative min-h-[95vh] flex items-center overflow-hidden bg-[#0f2a4a]">
         <div class="absolute inset-0 z-0">
-            <img src="assets/img/hero-equipo.jpg"
+            <img src="/assets/img/hero-equipo.jpg"
                  alt="Equipo Médico Alta Tecnología"
                  width="1920" height="1081" fetchpriority="high" decoding="async"
                  class="w-full h-full object-cover opacity-30 object-center mix-blend-overlay" />
@@ -260,7 +198,7 @@
                 <div class="lg:w-1/2 relative group">
                     <div class="absolute inset-0 bg-[#55c5e9] rounded-3xl transform rotate-3 scale-105 opacity-20 transition-transform duration-500 group-hover:rotate-6"></div>
                     <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
-                        <img src="assets/img/nosotros-equipo.jpg"
+                        <img src="/assets/img/nosotros-equipo.jpg"
                              alt="Equipo Médico Profesional"
                              width="1200" height="1600" loading="lazy" decoding="async"
                              class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110" />
@@ -413,7 +351,7 @@
                 <!-- Servicio 1 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#163A5F] relative overflow-hidden">
-                        <img src="assets/img/servicio-ecografias.jpg" alt="Ecografías" width="1040" height="780" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-ecografias.jpg" alt="Ecografías" width="1040" height="780" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#163A5F] via-[#163A5F]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="stethoscope" class="w-7 h-7 text-white"></i></div>
@@ -437,7 +375,7 @@
                         GES / Trato Directo
                     </div>
                     <div class="h-56 bg-[#4F8A6B] relative overflow-hidden">
-                        <img src="assets/img/servicio-licitaciones.jpg" alt="Licitaciones" width="722" height="430" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-licitaciones.jpg" alt="Licitaciones" width="722" height="430" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#4F8A6B] via-[#4F8A6B]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="file-check" class="w-7 h-7 text-white"></i></div>
@@ -458,7 +396,7 @@
                 <!-- Servicio 3 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#0c73ba] relative overflow-hidden">
-                        <img src="assets/img/servicio-apoyo-centros.jpg" alt="Apoyo a Centros" width="1600" height="873" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-apoyo-centros.jpg" alt="Apoyo a Centros" width="1600" height="873" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0c73ba] via-[#0c73ba]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
@@ -479,7 +417,7 @@
                 <!-- Servicio 4 - Destacado (Ancho completo) -->
                 <div class="bg-gradient-to-br from-[#163A5F] to-[#1E5F74] rounded-3xl overflow-hidden shadow-xl md:col-span-2 lg:col-span-3 flex flex-col md:flex-row text-white mt-4 border border-[#55c5e9]/30">
                     <div class="md:w-2/5 relative overflow-hidden">
-                        <img src="assets/img/servicio-empresas.jpg" alt="Empresas" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
+                        <img src="/assets/img/servicio-empresas.jpg" alt="Empresas" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i data-lucide="briefcase" class="w-20 h-20 text-[#55c5e9] opacity-80"></i>
                         </div>
@@ -868,39 +806,37 @@
                         <span class="text-white font-black text-2xl tracking-wide uppercase">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
                     </div>
                     <p class="text-sm mb-8 leading-relaxed text-gray-400 font-light max-w-md">
-                        Empresa chilena líder en la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
+                        Empresa chilena dedicada a la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
                     </p>
                     <div class="flex gap-4">
-                        <a href="https://wa.me/56930168791" target="_blank" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                        <a href="mailto:examenesdigitales@gmail.com" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        <a href="https://wa.me/56930168791?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20institucionales%20de%20Ex%C3%A1menes%20Digitales." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                        <a href="mailto:examenesdigitales@gmail.com" aria-label="Correo" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        <a href="tel:+56930168791" aria-label="Teléfono" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="phone" class="w-5 h-5"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Navegación</h4>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Servicios</h4>
                     <ul class="space-y-4 text-sm font-medium">
-                        <li><button onclick="scrollToSection('inicio')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Inicio</button></li>
-                        <li><button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Quiénes Somos</button></li>
-                        <li><button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Catálogo de Servicios</button></li>
-                        <li><button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Tecnología y Equipos</button></li>
-                        <li><button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</button></li>
-                        <li><button onclick="scrollToSection('experiencia')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Clientes y Licitaciones</button></li>
+                        <li><a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</a></li>
+                        <li><a href="/ecografia-en-terreno/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Ecografía en Terreno</a></li>
+                        <li><a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Cumplimiento GES</a></li>
+                        <li><a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Convenios Institucionales</a></li>
+                        <li><a href="/experiencia/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Experiencia y Respaldo</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Atención a Pacientes</h4>
-                    <div class="bg-[#163A5F] p-5 rounded-xl border border-white/10">
-                        <p class="text-xs text-blue-200 mb-4 leading-relaxed">
-                            Acceso exclusivo para pacientes que se realizaron exámenes en nuestros operativos en terreno.
-                        </p>
-                        <a href="#" class="block w-full text-center bg-[#55c5e9] text-[#0f2a4a] font-bold text-sm py-3 px-4 rounded-lg hover:bg-white transition-colors">
-                            Ingresar al Portal Web
-                        </a>
-                    </div>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Contacto</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="tel:+56930168791" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +56 9 3016 8791</a></li>
+                        <li><a href="mailto:examenesdigitales@gmail.com" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> examenesdigitales@gmail.com</a></li>
+                        <li><a href="/blog/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="newspaper" class="w-4 h-4"></i> Blog y Noticias</a></li>
+                        <li><a href="/#contacto" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Cobertura: todo Chile</a></li>
+                    </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500">
                 <p>© 2026 Exámenes Digitales S.P.A. Todos los derechos reservados.</p>
                 <div class="flex gap-6">
@@ -911,37 +847,14 @@
         </div>
     </footer>
 
-    <!-- Scripts de interactividad -->
-    <script>
-        // Inicializar íconos Lucide
-        document.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+    
+</body>
+</html>
 
-        // Manejar scroll del header
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('scrolled');
-                header.classList.add('bg-transparent');
-            }
-        });
+    
+</body>
+</html>
 
-        // Navegación suave
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mobile-menu').classList.add('hidden');
-            }
-        }
-
-        // Menú móvil
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
+    <script src="/js/main.js" defer></script>
 </body>
 </html>

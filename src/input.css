@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== Estilos y animaciones personalizadas (antes en <style> inline) ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-marquee { display: flex; animation: marquee 30s linear infinite; }
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header { transition: all 0.5s ease; }
+header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+header:not(.scrolled) { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+header.scrolled .nav-text { color: #163A5F; }
+header:not(.scrolled) .nav-text { color: #ffffff; }
+header.scrolled .nav-subtext { color: #1E5F74; }
+header:not(.scrolled) .nav-subtext { color: #BFDBFE; }
+
+.nav-link-hover { position: relative; }
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #55c5e9;
+  transition: all 0.3s ease;
+}
+.nav-link-hover:hover::after { width: 100%; }
+
+html { scroll-behavior: smooth; }
