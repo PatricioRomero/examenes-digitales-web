@@ -17,11 +17,33 @@ const FORM = 'https://forms.gle/5fGLxHbtptahZr67';
 const waLink = (txt = 'Hola, quisiera solicitar información sobre los servicios institucionales de Exámenes Digitales.') =>
   `${WA}?text=${encodeURIComponent(txt)}`;
 
+/* --- Analítica y verificación de buscadores --- */
+// ID de Google Analytics 4 que ya usaba el sitio publicado en Friki.
+const GA_ID = 'G-FMB7QC3734';
+// Token de verificación de Google Search Console (se completa al darlo de alta).
+const GSC_VERIFICATION = '';
+
+const gaSnippet = `
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');
+    </script>`;
+
+const gscMeta = GSC_VERIFICATION
+  ? `\n    <meta name="google-site-verification" content="${GSC_VERIFICATION}">`
+  : '';
+
+const headExtras = gaSnippet + gscMeta;
+
 /* ----------------------------- HEAD ----------------------------- */
 function head({ title, description, canonical, jsonld }) {
   return `<!DOCTYPE html>
 <html lang="es">
-<head>
+<head>${headExtras}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
@@ -660,6 +682,14 @@ for (const p of pages) {
 /* --- Reescribir index.html: header/footer compartidos + rutas absolutas --- */
 console.log('Actualizando index.html...');
 let index = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+
+// Analítica (Google Analytics) y verificación de Search Console
+if (!index.includes('googletagmanager.com/gtag/js')) {
+  index = index.replace(/<head>/, '<head>' + headExtras);
+}
+if (GSC_VERIFICATION && !index.includes('google-site-verification')) {
+  index = index.replace(/<head>/, '<head>' + gscMeta);
+}
 
 // Reemplazar header y footer por los compartidos
 index = index.replace(/<!-- Header & Navegación -->[\s\S]*?<\/header>/, header().trim());
