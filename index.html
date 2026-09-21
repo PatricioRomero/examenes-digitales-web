@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -7,73 +7,110 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-FMB7QC3734');
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exámenes Digitales | Ecografía en Terreno y Mamografía Móvil Chile</title>
-    <meta name="description" content="Ecografía en terreno, mamografía móvil y exámenes GES para municipalidades, hospitales y empresas en todo Chile. Más de 10 años de experiencia.">
+    <title>Exámenes Digitales | Diagnóstico en Terreno y Licitaciones</title>
+    <meta name="description" content="Exámenes Digitales presta servicios integrales de ecografía en terreno, mamografía móvil, apoyo a centros médicos y soluciones diagnósticas GES para municipalidades y hospitales en Chile.">
+    <meta name="theme-color" content="#0c73ba" />
     <link rel="canonical" href="https://examenesdigitales.cl/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
-    <!-- Open Graph / WhatsApp / Redes -->
+    
+    <!-- Open Graph / WhatsApp / Redes Sociales -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://examenesdigitales.cl/">
     <meta property="og:site_name" content="Exámenes Digitales">
-    <meta property="og:title" content="Exámenes Digitales | Ecografía en Terreno y Mamografía Móvil en Chile">
-    <meta property="og:description" content="Operativos de ecografía y mamografía móvil para municipalidades, hospitales y empresas. Cumplimiento GES garantizado en todo Chile.">
-    <meta property="og:image" content="https://examenesdigitales.cl/assets/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:title" content="Exámenes Digitales | Diagnóstico en Terreno y Licitaciones">
+    <meta property="og:description" content="Exámenes Digitales presta servicios integrales de ecografía en terreno, mamografía móvil, apoyo a centros médicos y soluciones diagnósticas GES para municipalidades y hospitales en Chile.">
+    <meta property="og:image" content="https://examenesdigitales.cl/assets/img/clinica-mamografia-movil.jpg">
     <meta property="og:locale" content="es_CL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Exámenes Digitales | Ecografía en Terreno y Mamografía Móvil Chile">
-    <meta name="twitter:description" content="Operativos de salud en terreno para instituciones públicas y privadas. Cumplimiento GES en todo Chile.">
-    <meta name="twitter:image" content="https://examenesdigitales.cl/assets/img/og-image.jpg">
-    <meta name="theme-color" content="#0c73ba" />
+    <meta name="twitter:title" content="Exámenes Digitales | Diagnóstico en Terreno y Licitaciones">
+    <meta name="twitter:description" content="Ecografía en terreno, mamografía móvil y exámenes GES para municipalidades y hospitales en Chile.">
+    <meta name="twitter:image" content="https://examenesdigitales.cl/assets/img/clinica-mamografia-movil.jpg">
+
+    <!-- CSS Compilado -->
+    <link rel="stylesheet" href="css/styles.css">
+
     
-    <!-- Tailwind CSS compilado -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Lucide Icons -->
-    <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Schema.org para SEO (Oculto para el usuario, visible para Google) -->
-        <script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "MedicalBusiness",
-          "@id": "https://examenesdigitales.cl/#business",
-          "name": "Exámenes Digitales SpA",
-          "url": "https://examenesdigitales.cl/",
-          "image": "https://examenesdigitales.cl/assets/img/og-image.jpg",
-          "telephone": "+56 9 3016 8791",
-          "email": "examenesdigitales@gmail.com",
-          "description": "Empresa chilena de diagnóstico por imágenes enfocada en ecografías en terreno, mamografía móvil, cumplimiento GES y apoyo a instituciones públicas y privadas.",
-          "areaServed": "Chile",
-          "address": { "@type": "PostalAddress", "addressCountry": "CL" },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+56 9 3016 8791",
-            "contactType": "sales",
-            "availableLanguage": ["es"]
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://examenesdigitales.cl/#website",
-          "url": "https://examenesdigitales.cl/",
-          "name": "Exámenes Digitales",
-          "inLanguage": "es-CL",
-          "publisher": { "@id": "https://examenesdigitales.cl/#business" }
-        }
-      ]
+      "@type": "MedicalBusiness",
+      "name": "Exámenes Digitales S.P.A.",
+      "url": "https://www.examenesdigitales.cl",
+      "telephone": "+56 9 3016 8791",
+      "email": "examenesdigitales@gmail.com",
+      "description": "Empresa chilena de diagnóstico por imágenes enfocada en ecografías en terreno, mamografía móvil, cumplimiento GES y apoyo a instituciones públicas y privadas.",
+      "areaServed": "Chile"
     }
     </script>
 
+    <!-- Estilos y Animaciones Personalizadas -->
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-marquee { display: flex; animation: marquee 30s linear infinite; }
+        
+        .glass-effect { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255,255,255,0.3); 
+        }
+
+        /* Comportamiento dinámico del menú al hacer scroll */
+        header { transition: all 0.5s ease; }
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+        header:not(.scrolled) { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        
+        /* Colores de texto del menú */
+        header.scrolled .nav-text { color: #163A5F; }
+        header:not(.scrolled) .nav-text { color: white; }
+        header.scrolled .nav-subtext { color: #1E5F74; }
+        header:not(.scrolled) .nav-subtext { color: #BFDBFE; }
+        
+        /* Efecto subrayado en hover */
+        .nav-link-hover { position: relative; }
+        .nav-link-hover::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background-color: #55c5e9;
+            transition: all 0.3s ease;
+        }
+        .nav-link-hover:hover::after { width: 100%; }
+        
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body class="font-sans text-[#4B5563] antialiased bg-[#F8FAFC] selection:bg-[#55c5e9] selection:text-white overflow-x-hidden">
 
@@ -91,7 +128,9 @@
     <!-- Header & Navegación -->
     <header id="main-header" class="fixed w-full top-0 z-40 bg-transparent">
         <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-3 cursor-pointer group">
+            
+            <!-- Logo Corporativo -->
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="scrollToSection('inicio')">
                 <div class="relative w-12 h-12 flex items-center justify-center transition-transform duration-500 group-hover:rotate-180">
                     <div class="absolute inset-0 border-[4px] border-[#55c5e9] rounded-full border-r-transparent rotate-45"></div>
                     <div class="absolute inset-2 border-[4px] border-[#0c73ba] rounded-full border-r-transparent rotate-45"></div>
@@ -100,48 +139,53 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
-                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">Estamos donde nos necesite</span>
+                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">
+                        Exámenes <span class="text-[#55c5e9]">Digitales</span>
+                    </span>
+                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">
+                        Estamos donde nos necesite
+                    </span>
                 </div>
-            </a>
+            </div>
 
             <!-- Nav Desktop -->
-            <nav class="hidden lg:flex items-center gap-6 font-semibold nav-text transition-colors text-sm">
-                <a href="/#nosotros" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</a>
-                <a href="/#servicios" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</a>
-                <a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Mamografía Móvil</a>
-                <a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Exámenes GES</a>
-                <a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</a>
-                <a href="/blog/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Blog</a>
-                <a href="/#contacto" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">Cotizar Proyecto</a>
+            <nav class="hidden lg:flex items-center gap-7 font-semibold nav-text transition-colors">
+                <button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</button>
+                <button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</button>
+                <button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Equipamiento</button>
+                <button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Clínica Móvil</button>
+                <button onclick="scrollToSection('institucional')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</button>
+                <button onclick="scrollToSection('contacto')" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">
+                    Cotizar Proyecto
+                </button>
             </nav>
 
             <!-- Botón Mobile -->
-            <button id="menu-toggle" class="lg:hidden nav-text transition-colors" aria-label="Abrir menú">
-                <i data-lucide="menu" class="w-8 h-8"></i>
+            <button class="lg:hidden nav-text transition-colors" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
             </button>
         </div>
 
         <!-- Menu Mobile Desplegable -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-5 animate-fade-in-up">
-            <a href="/#nosotros" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</a>
-            <a href="/#servicios" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios</a>
-            <a href="/mamografia-movil/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</a>
-            <a href="/examenes-ges/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Exámenes GES</a>
-            <a href="/convenios-institucionales/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Institucional</a>
-            <a href="/blog/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Blog</a>
-            <a href="/#contacto" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-3 shadow-lg">Contactar a Comercial</a>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-6 animate-fade-in-up">
+            <button onclick="scrollToSection('nosotros')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</button>
+            <button onclick="scrollToSection('servicios')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios y Especialidades</button>
+            <button onclick="scrollToSection('equipamiento')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Equipamiento y Tecnología</button>
+            <button onclick="scrollToSection('movil')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</button>
+            <button onclick="scrollToSection('institucional')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Convenios Institucionales</button>
+            <button onclick="scrollToSection('contacto')" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-4 shadow-lg">
+                Contactar a Comercial
+            </button>
         </div>
     </header>
 
     <!-- Hero Section Premium -->
     <section id="inicio" class="relative min-h-[95vh] flex items-center overflow-hidden bg-[#0f2a4a]">
         <div class="absolute inset-0 z-0">
-            <img src="/assets/img/hero-equipo.jpg"
-                 alt="Equipo Médico Alta Tecnología"
-                 width="1920" height="1081" fetchpriority="high" decoding="async"
-                 class="w-full h-full object-cover opacity-30 object-center mix-blend-overlay" />
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0f2a4a] via-[#163A5F]/90 to-[#1E5F74]/60"></div>
+            <img src="assets/img/hero-equipo.jpg" 
+                 alt="Equipo Médico Alta Tecnología" 
+                 class="w-full h-full object-cover opacity-55 object-center mix-blend-overlay" />
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0f2a4a]/78 via-[#163A5F]/62 to-[#1E5F74]/38"></div>
             <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-[#55c5e9] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
             <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#0c73ba] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
         </div>
@@ -162,9 +206,9 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-5">
-                    <button onclick="scrollToSection('contacto')" class="bg-[#55c5e9] text-[#0f2a4a] font-black text-lg px-8 py-4 rounded-xl hover:bg-white hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(85,197,233,0.4)]">
+                    <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#0f2a4a] font-black text-lg px-8 py-4 rounded-xl hover:bg-white hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(85,197,233,0.4)]">
                         Solicitar Cotización <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                    </button>
+                    </a>
                     <a href="https://youtu.be/C0PPbXOF3zs" target="_blank" rel="noopener noreferrer" class="bg-[#ffffff10] border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-white/20 transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
                         <i data-lucide="play-circle" class="w-6 h-6 text-[#55c5e9]"></i> Ver Video Corporativo
                     </a>
@@ -206,10 +250,10 @@
                 <div class="lg:w-1/2 relative group">
                     <div class="absolute inset-0 bg-[#55c5e9] rounded-3xl transform rotate-3 scale-105 opacity-20 transition-transform duration-500 group-hover:rotate-6"></div>
                     <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
-                        <img src="/assets/img/nosotros-equipo.jpg"
-                             alt="Equipo Médico Profesional"
-                             width="1200" height="1600" loading="lazy" decoding="async"
+                        <img src="assets/img/nosotros-equipo.jpg" 
+                             alt="Equipo Médico Profesional" 
                              class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-[#0c73ba]/28"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-[#163A5F] via-transparent to-transparent opacity-80"></div>
                         <div class="absolute bottom-0 left-0 p-8">
                             <p class="text-white text-xl font-medium leading-relaxed italic">
@@ -219,13 +263,6 @@
                         </div>
                     </div>
 
-                    <!-- Sello Empresa Mujer -->
-                    <div class="absolute -top-8 -right-8 bg-white p-6 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.15)] border-4 border-[#EAF3F8] flex flex-col items-center justify-center w-40 h-40 z-20 animate-float">
-                        <i data-lucide="award" class="w-8 h-8 text-[#a52216] mb-1"></i>
-                        <span class="text-[#0c73ba] font-bold text-center leading-tight text-sm">SELLO EMPRESA</span>
-                        <span class="text-[#a52216] font-black text-2xl">MUJER</span>
-                        <span class="text-[10px] text-gray-400 mt-1 uppercase tracking-widest font-bold">ChileCompra</span>
-                    </div>
                 </div>
                 
                 <div class="lg:w-1/2">
@@ -295,15 +332,15 @@
                         <div class="flex items-start gap-4">
                             <div class="bg-[#55c5e9]/20 p-3 rounded-xl"><i data-lucide="monitor" class="w-7 h-7 text-[#55c5e9]"></i></div>
                             <div>
-                                <h4 class="text-xl font-bold text-white">Tecnología Hologic de Vanguardia</h4>
+                                <h4 class="text-xl font-bold text-white">Tecnología de Vanguardia</h4>
                                 <p class="text-blue-200 text-sm mt-1">Equipos digitales de última generación que garantizan imágenes de alta resolución para diagnósticos tempranos precisos.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="bg-[#55c5e9]/20 p-3 rounded-xl"><i data-lucide="activity" class="w-7 h-7 text-[#55c5e9]"></i></div>
                             <div>
-                                <h4 class="text-xl font-bold text-white">Combinable con Ecomamaria</h4>
-                                <p class="text-blue-200 text-sm mt-1">Complemento ideal para mamas densas, aumentando la tasa de detección hasta en un 90% en el mismo operativo.</p>
+                                <h4 class="text-xl font-bold text-white">Complemento con Ecografía Mamaria</h4>
+                                <p class="text-blue-200 text-sm mt-1">Ideal para mamas densas, aumentando con esto la tasa de detección hasta en un 90% en el mismo operativo.</p>
                             </div>
                         </div>
                     </div>
@@ -338,8 +375,50 @@
                         </div>
                     </div>
                 </div>
+            </div> <!-- Fin de las 2 columnas superiores -->
 
+            <!-- Showcase Fotografía Clínica Móvil Real en Terreno -->
+            <div class="mt-14 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-[#0a1c32] md:relative group">
+                <div class="relative">
+                    <img src="assets/img/clinica-mamografia-movil.jpg" 
+                         alt="Clínica Mamográfica Móvil de Exámenes Digitales en operativo en terreno" 
+                         class="w-full h-[250px] sm:h-[320px] md:h-[480px] lg:h-[560px] object-cover object-[center_28%] transform group-hover:scale-105 transition-transform duration-700" />
+                    <!-- Badge visible on mobile sobre la foto -->
+                    <div class="absolute top-4 left-4 md:hidden">
+                        <span class="inline-flex items-center gap-1.5 bg-[#a52216] text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Unidad en Terreno
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Contenido: debajo en mobile, superpuesto en desktop -->
+                <div class="p-6 md:p-10 md:absolute md:inset-0 md:bg-gradient-to-t md:from-[#091b30] md:via-[#091b30]/75 md:to-transparent flex flex-col justify-end">
+                    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                        <div class="max-w-2xl md:bg-[#0a1c32]/80 md:backdrop-blur-md md:p-6 md:rounded-2xl md:border md:border-white/10 md:shadow-xl">
+                            <span class="hidden md:inline-flex items-center gap-1.5 bg-[#a52216] text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-3 shadow-md">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i> Unidad 100% Operativa en Terreno
+                            </span>
+                            <h3 class="text-2xl md:text-3xl font-black text-white leading-tight mb-2">
+                                Clínica Móvil de Mamografía Digital en Terreno
+                            </h3>
+                            <p class="text-blue-100 text-sm md:text-base leading-relaxed">
+                                Unidad rodante equipada con mamógrafo digital directo y tecnología de estándar internacional. Nuestro personal acreditado brinda atención cercana, cálida y de alta calidad clínica para la pesquisa precoz de cáncer de mama y resolución de listas de espera en todo Chile.
+                            </p>
+                        </div>
+                        <div class="shrink-0 flex flex-col sm:flex-row gap-3 mt-2 md:mt-0">
+                            <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center justify-center gap-2 bg-[#55c5e9] text-[#0f2a4a] font-black text-base px-6 py-3.5 rounded-xl hover:bg-white hover:shadow-[0_0_25px_rgba(85,197,233,0.5)] transition-all transform hover:-translate-y-0.5 shadow-lg">
+                                <i data-lucide="calendar" class="w-5 h-5"></i> Agendar Operativo
+                            </a>
+                            <a href="https://wa.me/56930168791?text=Hola,%20quisiera%20coordinar%20un%20operativo%20con%20la%20Cl%C3%ADnica%20Mamogr%C3%A1fica%20M%C3%B3vil" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold text-base px-6 py-3.5 rounded-xl hover:bg-[#20b858] transition-all shadow-lg">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i> Consultar WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -359,7 +438,7 @@
                 <!-- Servicio 1 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#163A5F] relative overflow-hidden">
-                        <img src="/assets/img/servicio-ecografias.jpg" alt="Ecografías" width="1040" height="780" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="assets/img/servicio-ecografias.jpg" alt="Ecografías" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#163A5F] via-[#163A5F]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="stethoscope" class="w-7 h-7 text-white"></i></div>
@@ -382,8 +461,15 @@
                     <div class="absolute top-6 right-6 bg-[#a52216] text-white text-xs font-bold px-4 py-1.5 rounded-full z-10 shadow-lg animate-pulse">
                         GES / Trato Directo
                     </div>
+                    <div class="absolute top-14 left-6 bg-white p-4 rounded-full shadow-[0_12px_30px_rgba(0,0,0,0.15)] border-4 border-[#EAF3F8] flex flex-col items-center justify-center w-28 h-28 z-10">
+                        <i data-lucide="award" class="w-5 h-5 text-[#a52216] mb-1"></i>
+                        <span class="text-[#0c73ba] font-bold text-center leading-tight text-[11px]">SELLO</span>
+                        <span class="text-[#0c73ba] font-bold text-center leading-tight text-[11px]">EMPRESA</span>
+                        <span class="text-[#a52216] font-black text-xl leading-none">MUJER</span>
+                        <span class="text-[9px] text-gray-400 mt-1 uppercase tracking-widest font-bold">ChileCompra</span>
+                    </div>
                     <div class="h-56 bg-[#4F8A6B] relative overflow-hidden">
-                        <img src="/assets/img/servicio-licitaciones.jpg" alt="Licitaciones" width="722" height="430" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="assets/img/servicio-licitaciones.jpg" alt="Licitaciones" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#4F8A6B] via-[#4F8A6B]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="file-check" class="w-7 h-7 text-white"></i></div>
@@ -404,7 +490,7 @@
                 <!-- Servicio 3 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#0c73ba] relative overflow-hidden">
-                        <img src="/assets/img/servicio-apoyo-centros.jpg" alt="Apoyo a Centros" width="1600" height="873" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="assets/img/servicio-apoyo-centros.jpg" alt="Apoyo a Centros" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0c73ba] via-[#0c73ba]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
@@ -425,7 +511,7 @@
                 <!-- Servicio 4 - Destacado (Ancho completo) -->
                 <div class="bg-gradient-to-br from-[#163A5F] to-[#1E5F74] rounded-3xl overflow-hidden shadow-xl md:col-span-2 lg:col-span-3 flex flex-col md:flex-row text-white mt-4 border border-[#55c5e9]/30">
                     <div class="md:w-2/5 relative overflow-hidden">
-                        <img src="/assets/img/servicio-empresas.jpg" alt="Empresas" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
+                        <img src="assets/img/servicio-empresas.jpg" alt="Empresas" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i data-lucide="briefcase" class="w-20 h-20 text-[#55c5e9] opacity-80"></i>
                         </div>
@@ -475,15 +561,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Siemens NX3 Elite & P500</strong><span class="text-xs text-gray-500">Alta gama para aplicaciones generales y músculo-esqueléticas.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Ecógrafos portátiles de alta resolución</strong><span class="text-xs text-gray-500">Equipados con transductores especiales para ecografía mamaria, que permiten una evaluación precisa y de alta calidad diagnóstica en terreno.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Mindray M7 Premium & M8</strong><span class="text-xs text-gray-500">Resolución superior para Doppler, obstetricia y partes blandas.</span></div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Philips ClearVue 550 & Samsung H60</strong><span class="text-xs text-gray-500">Performance en detalle abdominal y vascular.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Tecnología de origen internacional</strong><span class="text-xs text-gray-500">Contamos con equipos de marcas americanas, europeas y japonesas, reconocidas por su confiabilidad, rendimiento clínico y excelencia en imagen.</span></div>
                         </li>
                     </ul>
                 </div>
@@ -500,15 +582,15 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#4F8A6B] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Mamógrafo Lorad Hologic</strong><span class="text-xs text-gray-500">Mamografías digitales bilaterales/unilaterales, magnificaciones y localizaciones. Instalado en clínica móvil.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Mamógrafos digitales directos de última tecnología</strong><span class="text-xs text-gray-500">Diseñados para obtener imágenes de alta calidad, con excelente definición y rendimiento diagnóstico en programas de pesquisa y operativos preventivos.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#4F8A6B] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Ecógrafo Vinno 6</strong><span class="text-xs text-gray-500">Especializado en ginecología, transvaginal y obstetricia 4D.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Ecógrafos configurados para la salud de la mujer</strong><span class="text-xs text-gray-500">Equipos preparados para apoyar evaluaciones mamarias, ginecológicas y obstétricas, con alto nivel de resolución y desempeño clínico.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#4F8A6B] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Densitómetro GE Achilles Express</strong><span class="text-xs text-gray-500">Detección precoz de osteopenia y osteoporosis con entrega inmediata.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Densitómetros óseos americanos y portátiles</strong><span class="text-xs text-gray-500">Tecnología confiable para operativos preventivos y evaluación oportuna de salud ósea en distintos entornos de atención.</span></div>
                         </li>
                     </ul>
                 </div>
@@ -524,15 +606,15 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#0c73ba] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Sistema RIS-PACS Propio</strong><span class="text-xs text-gray-500">Almacenamiento seguro, teleradiología e informes radiológicos en línea para todas las modalidades.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Sistema RIS-PACS de última tecnología</strong><span class="text-xs text-gray-500">Para almacenamiento seguro de imágenes e informes radiológicos en línea, facilitando el acceso, la trazabilidad y la continuidad diagnóstica.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#0c73ba] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Rayos X Portátil GE & Flat Panel</strong><span class="text-xs text-gray-500">Radiografías digitales directas ejecutables en terreno o domicilio.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Rayos X portátiles y detectores directos</strong><span class="text-xs text-gray-500">Para radiografías en terreno o a domicilio, con tecnología digital orientada a una atención oportuna y de alta calidad.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check" class="w-5 h-5 text-[#0c73ba] shrink-0 mt-0.5"></i>
-                            <div><strong class="text-[#163A5F] block text-sm">Electrocardiograma 6 Canales</strong><span class="text-xs text-gray-500">Resultados e informes médicos procesados a distancia.</span></div>
+                            <div><strong class="text-[#163A5F] block text-sm">Electrocardiogramas para atención en terreno y domicilio</strong><span class="text-xs text-gray-500">Soluciones diagnósticas complementarias para operativos de salud, evaluación ambulatoria y prestaciones extramurales.</span></div>
                         </li>
                     </ul>
                 </div>
@@ -557,7 +639,7 @@
                             <span class="text-[#4F8A6B]">Y la resolvemos.</span>
                         </h2>
                         <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                            Sabemos que los programas sanitarios tienen plazos, presión asistencial y exposición. Le hablamos directamente a Direcciones de Salud Municipal (DISAM), Hospitales y Administradores: facilitamos la implementación de convenios con un enfoque serio, ordenado y 100% orientado a resultados. Exámenes Digitales no llega a improvisar; llega a resolver.
+                            Sabemos que los programas de salud tienen plazos, presión asistencial y exposición. Por eso, le hablamos directamente a las Direcciones de Salud Municipal, a las direcciones de hospitales y a los administradores de instituciones públicas y privadas. Facilitamos la implementación de convenios con un enfoque serio, ordenado y 100% orientado a resultados. Exámenes Digitales no llega a improvisar; llega a resolver.
                         </p>
                         
                         <div class="space-y-8">
@@ -586,10 +668,13 @@
                                 Gane tiempo, seguridad y rapidez con un proveedor integral autorizado por la Seremi de Salud. Nuestras preocupaciones son sus preocupaciones.
                             </p>
                             <div class="flex flex-col gap-4 relative z-10">
-                                <button onclick="scrollToSection('contacto')" class="bg-[#55c5e9] text-[#163A5F] py-4 px-6 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg w-full flex items-center justify-center gap-2">
+                                <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#163A5F] py-4 px-6 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg w-full flex items-center justify-center gap-2">
                                     Cotizar Proyecto Ahora <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                                </button>
-                                <a href="https://wa.me/56930168791" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-[#55c5e9] text-white py-4 px-6 rounded-xl font-bold hover:bg-[#55c5e9]/10 transition-colors flex items-center justify-center gap-2 w-full">
+                                </a>
+                                <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-[#55c5e9] text-white py-4 px-6 rounded-xl font-bold hover:bg-[#55c5e9]/10 transition-colors flex items-center justify-center gap-2 w-full">
+                                    <i data-lucide="file-text" class="w-5 h-5"></i> Completar Formulario
+                                </a>
+                                <a href="https://wa.me/56930168791" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-white/30 text-white py-4 px-6 rounded-xl font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 w-full">
                                     <i data-lucide="message-circle" class="w-5 h-5"></i> Conversar vía WhatsApp
                                 </a>
                             </div>
@@ -735,7 +820,6 @@
                                 <div>
                                     <p class="font-bold text-lg text-white mb-1">Correo Electrónico</p>
                                     <a href="mailto:examenesdigitales@gmail.com" class="text-blue-100 text-md break-all hover:text-white transition-colors block">examenesdigitales@gmail.com</a>
-                                    <a href="mailto:informaciones@examenesdigitales.cl" class="text-blue-100 text-md break-all hover:text-white transition-colors block mt-1">informaciones@examenesdigitales.cl</a>
                                 </div>
                             </div>
                             <div class="flex items-start gap-5">
@@ -755,46 +839,34 @@
                 <!-- Formulario -->
                 <div class="lg:w-3/5 p-12 bg-white">
                     <h3 class="text-2xl font-black text-[#163A5F] mb-8">Solicitud de Propuesta Institucional</h3>
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Gracias por su interés. Este formulario de prueba está listo para conectarse a su CRM o correo.');">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-[#163A5F] mb-2">Nombre del Solicitante</label>
-                                <input type="text" required class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:bg-white transition-all shadow-sm" placeholder="Ej. Juan Pérez" />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-[#163A5F] mb-2">Institución / Empresa / Centro</label>
-                                <input type="text" required class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:bg-white transition-all shadow-sm" placeholder="Ej. Municipalidad de..." />
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-[#163A5F] mb-2">Teléfono Directo / WhatsApp</label>
-                                <input type="tel" required class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:bg-white transition-all shadow-sm" placeholder="+56 9..." />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-[#163A5F] mb-2">Tipo de Requerimiento</label>
-                                <select class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:bg-white transition-all shadow-sm appearance-none cursor-pointer">
-                                    <option>Solicitar cotización</option>
-                                    <option>Coordinar reunión de trabajo</option>
-                                    <option>Consultar por licitación</option>
-                                    <option>Operativo de salud / Empresa</option>
-                                    <option>Apoyo a centro médico</option>
-                                </select>
-                            </div>
-                        </div>
+                    
 
-                        <div>
-                            <label class="block text-sm font-bold text-[#163A5F] mb-2">Detalle su Requerimiento</label>
-                            <textarea rows="4" required class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:bg-white transition-all shadow-sm resize-none" placeholder="Describa brevemente su necesidad, territorio, volumen estimado de pacientes y plazo..."></textarea>
-                        </div>
+<div class="space-y-6">
+    <p class="text-gray-600 leading-relaxed text-lg">
+        Para solicitar una propuesta institucional, convenio, operativo de salud o cotización,
+        complete nuestro formulario en línea. Nuestro equipo revisará su requerimiento y se
+        comunicará a la brevedad con usted.
+    </p>
 
-                        <div class="pt-4">
-                            <button type="submit" class="bg-[#0c73ba] text-white font-black text-lg py-4 px-10 rounded-xl hover:bg-[#163A5F] hover:shadow-[0_10px_20px_rgba(12,115,186,0.3)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-2">
-                                Enviar Solicitud a Gerencia Comercial
-                            </button>
-                        </div>
-                    </form>
+    <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <h4 class="text-[#163A5F] font-bold text-xl mb-3">Formulario de Contacto Institucional</h4>
+        <p class="text-gray-600 mb-5 leading-relaxed">
+            Haga clic en el siguiente botón para abrir el formulario oficial de Exámenes Digitales
+            y enviar su solicitud.
+        </p>
+
+        <a
+            href="https://forms.gle/5fGLxHbetptahZr67"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#0c73ba] text-white font-black text-lg py-4 px-10 rounded-xl hover:bg-[#163A5F] hover:shadow-[0_10px_20px_rgba(12,115,186,0.3)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-2 text-center"
+        >
+            Completar Solicitud Institucional
+        </a>
+    </div>
+</div>
+
+
                 </div>
 
             </div>
@@ -814,37 +886,39 @@
                         <span class="text-white font-black text-2xl tracking-wide uppercase">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
                     </div>
                     <p class="text-sm mb-8 leading-relaxed text-gray-400 font-light max-w-md">
-                        Empresa chilena dedicada a la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
+                        Empresa chilena líder en la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
                     </p>
                     <div class="flex gap-4">
-                        <a href="https://wa.me/56930168791?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20institucionales%20de%20Ex%C3%A1menes%20Digitales." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                        <a href="mailto:examenesdigitales@gmail.com" aria-label="Correo" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
-                        <a href="tel:+56930168791" aria-label="Teléfono" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                        <a href="https://wa.me/56930168791" target="_blank" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                        <a href="mailto:examenesdigitales@gmail.com" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
                     </div>
                 </div>
-
+                
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Servicios</h4>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Navegación</h4>
                     <ul class="space-y-4 text-sm font-medium">
-                        <li><a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</a></li>
-                        <li><a href="/ecografia-en-terreno/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Ecografía en Terreno</a></li>
-                        <li><a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Cumplimiento GES</a></li>
-                        <li><a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Convenios Institucionales</a></li>
-                        <li><a href="/experiencia/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Experiencia y Respaldo</a></li>
+                        <li><button onclick="scrollToSection('inicio')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Inicio</button></li>
+                        <li><button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Quiénes Somos</button></li>
+                        <li><button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Catálogo de Servicios</button></li>
+                        <li><button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Tecnología y Equipos</button></li>
+                        <li><button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</button></li>
+                        <li><button onclick="scrollToSection('experiencia')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Clientes y Licitaciones</button></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Contacto</h4>
-                    <ul class="space-y-4 text-sm font-medium">
-                        <li><a href="tel:+56930168791" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +56 9 3016 8791</a></li>
-                        <li><a href="mailto:examenesdigitales@gmail.com" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> examenesdigitales@gmail.com</a></li>
-                        <li><a href="/blog/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="newspaper" class="w-4 h-4"></i> Blog y Noticias</a></li>
-                        <li><a href="/#contacto" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Cobertura: todo Chile</a></li>
-                    </ul>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Atención a Pacientes</h4>
+                    <div class="bg-[#163A5F] p-5 rounded-xl border border-white/10">
+                        <p class="text-xs text-blue-200 mb-4 leading-relaxed">
+                            Acceso exclusivo para pacientes que se realizaron exámenes en nuestros operativos en terreno.
+                        </p>
+                        <a href="#" class="block w-full text-center bg-[#55c5e9] text-[#0f2a4a] font-bold text-sm py-3 px-4 rounded-lg hover:bg-white transition-colors">
+                            Ingresar al Portal Web
+                        </a>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500">
                 <p>© 2026 Exámenes Digitales S.P.A. Todos los derechos reservados.</p>
                 <div class="flex gap-6">
@@ -855,18 +929,37 @@
         </div>
     </footer>
 
-    
-</body>
-</html>
+    <!-- Scripts de interactividad -->
+    <script>
+        // Inicializar íconos Lucide
+        lucide.createIcons();
 
-    
-</body>
-</html>
+        // Manejar scroll del header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('scrolled');
+                header.classList.add('bg-transparent');
+            }
+        });
 
-    
-</body>
-</html>
+        // Navegación suave
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        }
 
-    <script src="/js/main.js" defer></script>
+        // Menú móvil
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
