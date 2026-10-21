@@ -15,6 +15,14 @@ Sitio estático (HTML + Tailwind compilado) de Exámenes Digitales SpA.
 - `index.html` — página principal (one-page por secciones).
 - `assets/img/` — imágenes optimizadas (JPEG, <360 KB c/u).
 - `css/styles.css` — Tailwind compilado (no usar cdn.tailwindcss.com en producción).
+  Recompilar tras cambiar clases: `npx tailwindcss@3 -c tailwind.config.js -i src/input.css -o css/styles.css --minify`
+  (requiere `@tailwindcss/typography`).
+- `src/build-pages.mjs` — genera las páginas internas, `/cotizar/`, el sitemap y
+  normaliza `index.html` (`node src/build-pages.mjs`).
+- `/cotizar/` y la sección `#contacto` — formulario propio que envía a la hoja de
+  respuestas del Google Form "Solicitud Institucional" (IDs `entry.*` en el build);
+  el manejo del envío, la confirmación y el enlace a WhatsApp están en `js/main.js`.
+- Correo corporativo: `contacto@examenesdigitales.cl` (reenvío configurado en Cloudflare Email Routing).
 - `robots.txt`, `sitemap.xml` — indexación para Google/Bing.
 - `favicon.svg` — ícono del sitio.
 

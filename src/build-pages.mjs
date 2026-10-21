@@ -12,7 +12,27 @@ import path from 'path';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
 const SITE = 'https://examenesdigitales.cl';
 const WA = 'https://wa.me/56930168791';
-const FORM = 'https://forms.gle/5fGLxHbtptahZr67';
+const WA2 = 'https://wa.me/56999187629';
+const PHONE = '+56 9 3016 8791';
+const PHONE_TEL = '+56930168791';
+const PHONE2 = '+56 9 9918 7629';
+const PHONE2_TEL = '+56999187629';
+const EMAIL = 'contacto@examenesdigitales.cl';
+// Página interna con el formulario de solicitud (reemplaza el enlace externo a Google Forms).
+const FORM = '/cotizar/';
+// Destino real de los envíos: la hoja de respuestas del Google Form institucional.
+const GFORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSexdXe010Pha5HG_CNOSR-qAVQ6-9O0zK7nyl-LHSAeJ5K3dA/formResponse';
+const GFORM = {
+  nombre: 'entry.1960090839',
+  institucion: 'entry.1299281272',
+  correo: 'entry.124684158',
+  telefono: 'entry.1864935225',
+  tipo: 'entry.580446858',
+  lugar: 'entry.2055907999',
+  detalle: 'entry.804339692',
+  preferencia: 'entry.1022401746',
+};
+const TIPOS = ['Solicitar cotización', 'Convenio institucional', 'Operativo de salud para empresa', 'Licitación pública', 'Reunión comercial', 'Consulta general'];
 
 const waLink = (txt = 'Hola, quisiera solicitar información sobre los servicios institucionales de Exámenes Digitales.') =>
   `${WA}?text=${encodeURIComponent(txt)}`;
@@ -156,8 +176,9 @@ function footer() {
                     </p>
                     <div class="flex gap-4">
                         <a href="${waLink()}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                        <a href="mailto:examenesdigitales@gmail.com" aria-label="Correo" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
-                        <a href="tel:+56930168791" aria-label="Teléfono" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                        <a href="mailto:${EMAIL}" aria-label="Correo" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        <a href="tel:${PHONE_TEL}" aria-label="Teléfono" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                        <a href="https://www.facebook.com/examenesdigitales" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="facebook" class="w-5 h-5"></i></a>
                     </div>
                 </div>
 
@@ -175,10 +196,12 @@ function footer() {
                 <div>
                     <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Contacto</h4>
                     <ul class="space-y-4 text-sm font-medium">
-                        <li><a href="tel:+56930168791" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +56 9 3016 8791</a></li>
-                        <li><a href="mailto:examenesdigitales@gmail.com" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> examenesdigitales@gmail.com</a></li>
+                        <li><a href="tel:${PHONE_TEL}" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> ${PHONE}</a></li>
+                        <li><a href="${WA2}" target="_blank" rel="noopener noreferrer" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> ${PHONE2} (WhatsApp)</a></li>
+                        <li><a href="mailto:${EMAIL}" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> ${EMAIL}</a></li>
+                        <li><a href="${FORM}" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Solicitar cotización</a></li>
                         <li><a href="/blog/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="newspaper" class="w-4 h-4"></i> Blog y Noticias</a></li>
-                        <li><a href="/#contacto" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Cobertura: todo Chile</a></li>
+                        <li><span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Lampa, Región Metropolitana · Cobertura nacional</span></li>
                     </ul>
                 </div>
             </div>
@@ -211,7 +234,7 @@ const ctaBand = (titulo, texto, boton = 'Cotizar Proyecto') => `
                         <p class="text-blue-100 text-lg font-light">${texto}</p>
                     </div>
                     <div class="flex flex-col gap-4 w-full lg:w-auto">
-                        <a href="${FORM}" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#163A5F] py-4 px-8 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg flex items-center justify-center gap-2">${boton} <i data-lucide="chevron-right" class="w-5 h-5"></i></a>
+                        <a href="${FORM}" class="bg-[#55c5e9] text-[#163A5F] py-4 px-8 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg flex items-center justify-center gap-2">${boton} <i data-lucide="chevron-right" class="w-5 h-5"></i></a>
                         <a href="${waLink()}" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-[#55c5e9] text-white py-4 px-8 rounded-xl font-bold hover:bg-[#55c5e9]/10 transition-colors flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i> Conversar vía WhatsApp</a>
                     </div>
                 </div>
@@ -233,7 +256,7 @@ ${breadcrumb.map((b, i) => `                ${i > 0 ? '<span class="mx-2 opacity
             <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight max-w-4xl">${h1}</h1>
             <p class="text-xl text-blue-100 font-light leading-relaxed max-w-3xl">${lead}</p>
             <div class="flex flex-col sm:flex-row gap-4 mt-10">
-                <a href="${FORM}" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#163A5F] px-8 py-4 rounded-full font-black hover:bg-white transition-all text-center shadow-lg">Solicitar Cotización</a>
+                <a href="${FORM}" class="bg-[#55c5e9] text-[#163A5F] px-8 py-4 rounded-full font-black hover:bg-white transition-all text-center shadow-lg">Solicitar Cotización</a>
                 <a href="${waLink()}" target="_blank" rel="noopener noreferrer" class="border-2 border-[#55c5e9] text-white px-8 py-4 rounded-full font-bold hover:bg-[#55c5e9]/10 transition-colors text-center">Asesoría Inmediata</a>
             </div>
         </div>
@@ -466,7 +489,7 @@ ${bullets([
                 <div class="bg-[#163A5F] rounded-3xl p-10 text-white shadow-xl">
                     <h3 class="text-2xl font-black mb-6">¿Su institución necesita ampliar capacidad diagnóstica?</h2>
                     <p class="text-blue-100 mb-8 font-light">Contamos con todas las resoluciones y autorizaciones sanitarias requeridas. Analicemos juntos sus necesidades y requisitos.</p>
-                    <a href="${FORM}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-[#55c5e9] text-[#163A5F] font-black py-4 rounded-xl hover:bg-white transition-colors">Cotizar Proyecto</a>
+                    <a href="${FORM}" class="block w-full text-center bg-[#55c5e9] text-[#163A5F] font-black py-4 rounded-xl hover:bg-white transition-colors">Cotizar Proyecto</a>
                 </div>
             </div>
 `) + faqSection(faqs) + ctaBand('Su mejor socio diagnóstico', 'Conversemos sobre los plazos y metas de su programa sanitario.'),
@@ -666,6 +689,159 @@ ${featureGrid([
   });
 }
 
+/* ------------------------- Formulario de solicitud ------------------------- */
+// Formulario nativo. Envía a la hoja de respuestas del Google Form institucional
+// (mismo destino que el formulario anterior) sin sacar al usuario del sitio.
+// El manejo del envío está en /js/main.js (data-gform).
+const contactForm = ({ compact = false } = {}) => `
+                    <form id="form-solicitud" class="space-y-5" method="POST" action="${GFORM_ACTION}" target="gform-sink" data-gform novalidate>
+                        <div class="grid grid-cols-1 ${compact ? '' : 'md:grid-cols-2'} gap-5">
+                            <div>
+                                <label for="f-nombre" class="block text-sm font-bold text-[#163A5F] mb-1.5">Nombre del solicitante <span class="text-[#a52216]">*</span></label>
+                                <input id="f-nombre" name="${GFORM.nombre}" type="text" required autocomplete="name" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-institucion" class="block text-sm font-bold text-[#163A5F] mb-1.5">Institución / Empresa / Centro <span class="text-[#a52216]">*</span></label>
+                                <input id="f-institucion" name="${GFORM.institucion}" type="text" required autocomplete="organization" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-correo" class="block text-sm font-bold text-[#163A5F] mb-1.5">Correo electrónico <span class="text-[#a52216]">*</span></label>
+                                <input id="f-correo" name="${GFORM.correo}" type="email" required autocomplete="email" inputmode="email" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-telefono" class="block text-sm font-bold text-[#163A5F] mb-1.5">Teléfono / WhatsApp <span class="text-[#a52216]">*</span></label>
+                                <input id="f-telefono" name="${GFORM.telefono}" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+56 9 ..." class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-tipo" class="block text-sm font-bold text-[#163A5F] mb-1.5">Tipo de requerimiento <span class="text-[#a52216]">*</span></label>
+                                <select id="f-tipo" name="${GFORM.tipo}" required class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                                    <option value="" disabled selected>Seleccione…</option>
+${TIPOS.map((t) => `                                    <option>${t}</option>`).join('\n')}
+                                </select>
+                            </div>
+                            <div>
+                                <label for="f-lugar" class="block text-sm font-bold text-[#163A5F] mb-1.5">Comuna / Ciudad / Región <span class="text-[#a52216]">*</span></label>
+                                <input id="f-lugar" name="${GFORM.lugar}" type="text" required placeholder="Ej.: Illapel, Región de Coquimbo" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="f-detalle" class="block text-sm font-bold text-[#163A5F] mb-1.5">Detalle de su requerimiento <span class="text-[#a52216]">*</span></label>
+                            <textarea id="f-detalle" name="${GFORM.detalle}" rows="4" required placeholder="Exámenes requeridos, volumen estimado de pacientes, fechas tentativas y lugar de atención." class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent"></textarea>
+                        </div>
+                        <fieldset>
+                            <legend class="block text-sm font-bold text-[#163A5F] mb-2">¿Cómo prefiere que lo contactemos? <span class="text-[#a52216]">*</span></legend>
+                            <div class="flex flex-wrap gap-x-6 gap-y-2 text-[#163A5F]">
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="${GFORM.preferencia}" value="WhatsApp" checked class="w-4 h-4 accent-[#0c73ba]"> WhatsApp</label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="${GFORM.preferencia}" value="Teléfono" class="w-4 h-4 accent-[#0c73ba]"> Teléfono</label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="${GFORM.preferencia}" value="Correo electrónico" class="w-4 h-4 accent-[#0c73ba]"> Correo electrónico</label>
+                            </div>
+                        </fieldset>
+                        <!-- Campo trampa anti-spam (oculto a personas) -->
+                        <div class="hidden" aria-hidden="true"><label>Sitio web<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                        <p id="form-error" class="hidden text-sm font-semibold text-[#a52216]" role="alert"></p>
+                        <button type="submit" class="bg-[#0c73ba] text-white font-black text-lg py-4 px-10 rounded-xl hover:bg-[#163A5F] hover:shadow-[0_10px_20px_rgba(12,115,186,0.3)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-2 text-center disabled:opacity-60 disabled:cursor-wait">
+                            <span data-label>Enviar solicitud</span> <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                        <p class="text-xs text-gray-500 leading-relaxed">Sus datos se usan únicamente para responder esta solicitud. Respondemos en horario hábil, normalmente el mismo día.</p>
+                    </form>
+                    <iframe name="gform-sink" title="envío" class="hidden" tabindex="-1" aria-hidden="true"></iframe>
+                    <div id="form-ok" class="hidden text-center py-10" role="status" aria-live="polite">
+                        <div class="mx-auto w-20 h-20 rounded-full bg-[#4F8A6B]/10 flex items-center justify-center mb-6"><i data-lucide="check-circle-2" class="w-10 h-10 text-[#4F8A6B]"></i></div>
+                        <h4 class="text-2xl font-black text-[#163A5F] mb-3">Solicitud recibida</h4>
+                        <p class="text-gray-600 leading-relaxed mb-8 max-w-md mx-auto">Gracias. Nuestro equipo comercial revisará su requerimiento y se comunicará con usted a la brevedad. Si prefiere avanzar ahora mismo, continúe por WhatsApp con su solicitud ya redactada.</p>
+                        <a id="form-ok-wa" href="${WA}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-black py-4 px-8 rounded-xl hover:brightness-110 transition-all shadow-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Continuar por WhatsApp</a>
+                    </div>`;
+
+const contactInfoCard = () => `
+                <div class="lg:w-2/5 bg-gradient-to-br from-[#163A5F] to-[#1E5F74] p-10 md:p-12 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-[#55c5e9] rounded-full blur-[100px] opacity-30 mix-blend-screen -mr-20 -mt-20"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-black mb-10 text-white">Datos de Contacto</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-5">
+                                <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="phone" class="w-6 h-6 text-[#55c5e9]"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg text-white mb-1">Teléfono y WhatsApp</p>
+                                    <a href="tel:${PHONE_TEL}" class="text-blue-100 text-lg hover:text-white transition-colors block">${PHONE}</a>
+                                    <a href="${WA2}" target="_blank" rel="noopener noreferrer" class="text-blue-100 text-lg hover:text-white transition-colors block">${PHONE2} <span class="text-sm opacity-80">(solo WhatsApp)</span></a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="mail" class="w-6 h-6 text-[#55c5e9]"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg text-white mb-1">Correo Electrónico</p>
+                                    <a href="mailto:${EMAIL}" class="text-blue-100 text-base break-all hover:text-white transition-colors block">${EMAIL}</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="map-pin" class="w-6 h-6 text-[#55c5e9]"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg text-white mb-1">Sede Central</p>
+                                    <p class="text-blue-100 text-base">Lampa, Región Metropolitana.</p>
+                                    <div class="inline-block bg-[#4F8A6B] text-white text-xs font-bold px-3 py-1 rounded-full mt-2">Operación a Nivel Nacional</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="clock" class="w-6 h-6 text-[#55c5e9]"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg text-white mb-1">Horario comercial</p>
+                                    <p class="text-blue-100 text-base">Lunes a viernes, 9:00 a 18:00 h.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+/* Página /cotizar/ */
+{
+  const path_ = '/cotizar/';
+  pages.push({
+    out: `${path_}index.html`,
+    head: {
+      title: 'Solicitar Cotización de Operativo de Salud | Exámenes Digitales',
+      description: 'Solicite una cotización o propuesta institucional de mamografía móvil, ecografía en terreno o exámenes GES para su municipalidad, hospital, centro médico o empresa. Respuesta el mismo día hábil.',
+      canonical: `${SITE}${path_}`,
+      jsonld: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Solicitar cotización — Exámenes Digitales',
+        url: `${SITE}${path_}`,
+        mainEntity: { '@id': `${SITE}/#organizacion` },
+      }, null, 2),
+    },
+    body: `
+    <section class="relative pt-36 pb-20 bg-[#0f2a4a] text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#1E5F74] blur-[120px] opacity-60"></div>
+            <div class="absolute bottom-[10%] -right-[10%] w-[40%] h-[60%] rounded-full bg-[#0c73ba] blur-[120px] opacity-40"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <nav aria-label="Ruta de navegación" class="mb-8 text-xs text-blue-200 font-medium"><a href="/" class="hover:text-[#55c5e9]">Inicio</a><span class="mx-2 opacity-50">/</span><span class="text-[#55c5e9]">Solicitar cotización</span></nav>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h1 class="text-4xl md:text-5xl font-black mb-4">Solicite su propuesta institucional</h1>
+                <p class="text-xl text-blue-200 font-light">Cuéntenos qué exámenes necesita, para cuántas personas y en qué comuna. Le respondemos el mismo día hábil con una propuesta técnica y económica.</p>
+            </div>
+            <div class="bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto text-[#4B5563]">
+${contactInfoCard()}
+                <div class="lg:w-3/5 p-8 md:p-12 bg-white">
+                    <h2 class="text-2xl font-black text-[#163A5F] mb-6">Formulario de solicitud</h2>
+${contactForm()}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
+                <div class="p-6"><div class="mx-auto w-14 h-14 rounded-full bg-[#55c5e9]/15 flex items-center justify-center mb-4"><i data-lucide="clock" class="w-7 h-7 text-[#0c73ba]"></i></div><h3 class="font-black text-[#163A5F] text-lg mb-2">Respuesta el mismo día</h3><p class="text-gray-600 text-sm">Revisamos cada solicitud en horario hábil y le llamamos o escribimos por el canal que prefiera.</p></div>
+                <div class="p-6"><div class="mx-auto w-14 h-14 rounded-full bg-[#55c5e9]/15 flex items-center justify-center mb-4"><i data-lucide="file-check" class="w-7 h-7 text-[#0c73ba]"></i></div><h3 class="font-black text-[#163A5F] text-lg mb-2">Propuesta formal</h3><p class="text-gray-600 text-sm">Propuesta técnica y económica apta para trato directo, convenio o licitación en Mercado Público.</p></div>
+                <div class="p-6"><div class="mx-auto w-14 h-14 rounded-full bg-[#55c5e9]/15 flex items-center justify-center mb-4"><i data-lucide="truck" class="w-7 h-7 text-[#0c73ba]"></i></div><h3 class="font-black text-[#163A5F] text-lg mb-2">Cobertura nacional</h3><p class="text-gray-600 text-sm">Clínica móvil de mamografía y equipos portátiles de ecografía desplegados en todo Chile.</p></div>
+            </div>
+        </div>
+    </section>`,
+  });
+}
+
 /* --------------------------- Escritura de archivos --------------------------- */
 function write(rel, content) {
   const full = path.join(ROOT, rel);
@@ -690,6 +866,26 @@ if (!index.includes('googletagmanager.com/gtag/js')) {
 if (GSC_VERIFICATION && !index.includes('google-site-verification')) {
   index = index.replace(/<head>/, '<head>' + gscMeta);
 }
+
+// Sección de contacto: tarjeta de datos + formulario nativo compartidos
+index = index.replace(
+  /(<div class="bg-white rounded-\[40px\] shadow-2xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">)[\s\S]*?(\n            <\/div>\n        <\/div>\n    <\/section>)/,
+  (m, open, close) => `${open}
+${contactInfoCard()}
+                <div class="lg:w-3/5 p-8 md:p-12 bg-white">
+                    <h3 class="text-2xl font-black text-[#163A5F] mb-6">Solicitud de Propuesta Institucional</h3>
+${contactForm()}
+                </div>
+${close}`
+);
+// Enlaces al antiguo Google Form → página interna de cotización
+index = index.replace(/href="https:\/\/forms\.gle\/[A-Za-z0-9]+"(\s+target="_blank"\s+rel="noopener noreferrer")?/g, 'href="/cotizar/"');
+// Correo corporativo
+index = index.replace(/examenesdigitales@gmail\.com/g, EMAIL);
+// Tailwind por CDN (bloquea el renderizado y pesa ~400 KB): el CSS ya está compilado en /css/styles.css
+index = index.replace(/[ \t]*<!-- Tailwind CSS -->\r?\n[ \t]*<script src="https:\/\/cdn\.tailwindcss\.com"><\/script>\r?\n/, '');
+// Lucide: versión fija y diferida
+index = index.replace(/<script src="https:\/\/unpkg\.com\/lucide@latest"><\/script>/, '<script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>');
 
 // Reemplazar header y footer por los compartidos
 index = index.replace(/<!-- Header & Navegación -->[\s\S]*?<\/header>/, header().trim());
@@ -717,6 +913,7 @@ const urls = [
   { loc: '/examenes-ges/', priority: '0.9', freq: 'monthly' },
   { loc: '/convenios-institucionales/', priority: '0.8', freq: 'monthly' },
   { loc: '/experiencia/', priority: '0.7', freq: 'monthly' },
+  { loc: '/cotizar/', priority: '0.8', freq: 'monthly' },
   { loc: '/blog/', priority: '0.6', freq: 'weekly' },
   { loc: '/blog/como-se-realiza-un-operativo-de-mamografia-movil/', priority: '0.6', freq: 'yearly' },
 ];

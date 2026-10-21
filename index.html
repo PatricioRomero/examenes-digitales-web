@@ -17,7 +17,7 @@
     <meta name="description" content="Exámenes Digitales presta servicios integrales de ecografía en terreno, mamografía móvil, apoyo a centros médicos y soluciones diagnósticas GES para municipalidades y hospitales en Chile.">
     <meta name="theme-color" content="#0c73ba" />
     <link rel="canonical" href="https://examenesdigitales.cl/">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / WhatsApp / Redes Sociales -->
@@ -34,83 +34,72 @@
     <meta name="twitter:image" content="https://examenesdigitales.cl/assets/img/clinica-mamografia-movil.jpg">
 
     <!-- CSS Compilado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 
     <!-- Schema.org para SEO (Oculto para el usuario, visible para Google) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Exámenes Digitales S.P.A.",
-      "url": "https://www.examenesdigitales.cl",
-      "telephone": "+56 9 3016 8791",
-      "email": "examenesdigitales@gmail.com",
-      "description": "Empresa chilena de diagnóstico por imágenes enfocada en ecografías en terreno, mamografía móvil, cumplimiento GES y apoyo a instituciones públicas y privadas.",
-      "areaServed": "Chile"
+      "@graph": [
+        {
+          "@type": ["MedicalBusiness", "Organization"],
+          "@id": "https://examenesdigitales.cl/#organizacion",
+          "name": "Exámenes Digitales SpA",
+          "alternateName": "Exámenes Digitales",
+          "url": "https://examenesdigitales.cl/",
+          "logo": "https://examenesdigitales.cl/assets/img/og-image.jpg",
+          "image": "https://examenesdigitales.cl/assets/img/clinica-mamografia-movil.jpg",
+          "description": "Empresa chilena de diagnóstico por imágenes en terreno: mamografía móvil, ecografía en terreno, cumplimiento GES y apoyo a municipalidades, hospitales, centros médicos y empresas en todo Chile.",
+          "telephone": "+56930168791",
+          "email": "contacto@examenesdigitales.cl",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lampa",
+            "addressRegion": "Región Metropolitana",
+            "addressCountry": "CL"
+          },
+          "areaServed": { "@type": "Country", "name": "Chile" },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "telephone": "+56930168791",
+              "email": "contacto@examenesdigitales.cl",
+              "availableLanguage": "es",
+              "areaServed": "CL"
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "telephone": "+56999187629",
+              "availableLanguage": "es",
+              "areaServed": "CL"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/examenesdigitales",
+            "https://youtu.be/C0PPbXOF3zs"
+          ],
+          "medicalSpecialty": "Radiography",
+          "knowsAbout": ["Mamografía móvil", "Ecografía en terreno", "Exámenes GES", "Operativos de salud", "Licitaciones públicas de imagenología"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://examenesdigitales.cl/#website",
+          "url": "https://examenesdigitales.cl/",
+          "name": "Exámenes Digitales",
+          "inLanguage": "es-CL",
+          "publisher": { "@id": "https://examenesdigitales.cl/#organizacion" }
+        }
+      ]
     }
     </script>
 
-    <!-- Estilos y Animaciones Personalizadas -->
-    <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-marquee { display: flex; animation: marquee 30s linear infinite; }
-        
-        .glass-effect { 
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255,255,255,0.3); 
-        }
-
-        /* Comportamiento dinámico del menú al hacer scroll */
-        header { transition: all 0.5s ease; }
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-        header:not(.scrolled) { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-        
-        /* Colores de texto del menú */
-        header.scrolled .nav-text { color: #163A5F; }
-        header:not(.scrolled) .nav-text { color: white; }
-        header.scrolled .nav-subtext { color: #1E5F74; }
-        header:not(.scrolled) .nav-subtext { color: #BFDBFE; }
-        
-        /* Efecto subrayado en hover */
-        .nav-link-hover { position: relative; }
-        .nav-link-hover::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 2px; background-color: #55c5e9;
-            transition: all 0.3s ease;
-        }
-        .nav-link-hover:hover::after { width: 100%; }
-        
-        html { scroll-behavior: smooth; }
-    </style>
 </head>
 <body class="font-sans text-[#4B5563] antialiased bg-[#F8FAFC] selection:bg-[#55c5e9] selection:text-white overflow-x-hidden">
 
@@ -128,9 +117,7 @@
     <!-- Header & Navegación -->
     <header id="main-header" class="fixed w-full top-0 z-40 bg-transparent">
         <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
-            
-            <!-- Logo Corporativo -->
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="scrollToSection('inicio')">
+            <a href="/" class="flex items-center gap-3 cursor-pointer group">
                 <div class="relative w-12 h-12 flex items-center justify-center transition-transform duration-500 group-hover:rotate-180">
                     <div class="absolute inset-0 border-[4px] border-[#55c5e9] rounded-full border-r-transparent rotate-45"></div>
                     <div class="absolute inset-2 border-[4px] border-[#0c73ba] rounded-full border-r-transparent rotate-45"></div>
@@ -139,53 +126,47 @@
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">
-                        Exámenes <span class="text-[#55c5e9]">Digitales</span>
-                    </span>
-                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">
-                        Estamos donde nos necesite
-                    </span>
+                    <span class="nav-text font-black text-2xl tracking-tight uppercase transition-colors">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
+                    <span class="nav-subtext text-[10px] tracking-[0.2em] font-bold uppercase mt-[-4px] transition-colors">Estamos donde nos necesite</span>
                 </div>
-            </div>
+            </a>
 
             <!-- Nav Desktop -->
-            <nav class="hidden lg:flex items-center gap-7 font-semibold nav-text transition-colors">
-                <button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</button>
-                <button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</button>
-                <button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Equipamiento</button>
-                <button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Clínica Móvil</button>
-                <button onclick="scrollToSection('institucional')" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</button>
-                <button onclick="scrollToSection('contacto')" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">
-                    Cotizar Proyecto
-                </button>
+            <nav class="hidden lg:flex items-center gap-6 font-semibold nav-text transition-colors text-sm">
+                <a href="/#nosotros" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Quiénes Somos</a>
+                <a href="/#servicios" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Servicios</a>
+                <a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Mamografía Móvil</a>
+                <a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Exámenes GES</a>
+                <a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Institucional</a>
+                <a href="/blog/" class="hover:text-[#55c5e9] transition-colors nav-link-hover">Blog</a>
+                <a href="/#contacto" class="bg-gradient-to-r from-[#0c73ba] to-[#1E5F74] !text-white px-6 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(12,115,186,0.5)] transition-all hover:-translate-y-1">Cotizar Proyecto</a>
             </nav>
 
             <!-- Botón Mobile -->
-            <button class="lg:hidden nav-text transition-colors" onclick="toggleMenu()">
-                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            <button id="menu-toggle" class="lg:hidden nav-text transition-colors" aria-label="Abrir menú">
+                <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
 
         <!-- Menu Mobile Desplegable -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-6 animate-fade-in-up">
-            <button onclick="scrollToSection('nosotros')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</button>
-            <button onclick="scrollToSection('servicios')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios y Especialidades</button>
-            <button onclick="scrollToSection('equipamiento')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Equipamiento y Tecnología</button>
-            <button onclick="scrollToSection('movil')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</button>
-            <button onclick="scrollToSection('institucional')" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Convenios Institucionales</button>
-            <button onclick="scrollToSection('contacto')" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-4 shadow-lg">
-                Contactar a Comercial
-            </button>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full glass-effect shadow-2xl py-6 px-8 flex flex-col gap-5 animate-fade-in-up">
+            <a href="/#nosotros" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Quiénes Somos</a>
+            <a href="/#servicios" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Servicios</a>
+            <a href="/mamografia-movil/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Mamografía Móvil</a>
+            <a href="/examenes-ges/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Exámenes GES</a>
+            <a href="/convenios-institucionales/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Institucional</a>
+            <a href="/blog/" class="text-left text-[#163A5F] font-bold text-lg border-b border-gray-200 pb-2">Blog</a>
+            <a href="/#contacto" class="bg-[#163A5F] text-white px-6 py-4 rounded-xl font-bold text-center text-lg mt-3 shadow-lg">Contactar a Comercial</a>
         </div>
     </header>
 
     <!-- Hero Section Premium -->
     <section id="inicio" class="relative min-h-[95vh] flex items-center overflow-hidden bg-[#0f2a4a]">
         <div class="absolute inset-0 z-0">
-            <img src="assets/img/hero-equipo.jpg" 
+            <img src="/assets/img/hero-equipo.jpg" 
                  alt="Equipo Médico Alta Tecnología" 
                  class="w-full h-full object-cover opacity-55 object-center mix-blend-overlay" />
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0f2a4a]/78 via-[#163A5F]/62 to-[#1E5F74]/38"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0f2a4a]/[0.78] via-[#163A5F]/[0.62] to-[#1E5F74]/[0.38]"></div>
             <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-[#55c5e9] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
             <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#0c73ba] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
         </div>
@@ -206,7 +187,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#0f2a4a] font-black text-lg px-8 py-4 rounded-xl hover:bg-white hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(85,197,233,0.4)]">
+                    <a href="/cotizar/" class="bg-[#55c5e9] text-[#0f2a4a] font-black text-lg px-8 py-4 rounded-xl hover:bg-white hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(85,197,233,0.4)]">
                         Solicitar Cotización <i data-lucide="arrow-right" class="w-6 h-6"></i>
                     </a>
                     <a href="https://youtu.be/C0PPbXOF3zs" target="_blank" rel="noopener noreferrer" class="bg-[#ffffff10] border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-white/20 transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
@@ -250,10 +231,10 @@
                 <div class="lg:w-1/2 relative group">
                     <div class="absolute inset-0 bg-[#55c5e9] rounded-3xl transform rotate-3 scale-105 opacity-20 transition-transform duration-500 group-hover:rotate-6"></div>
                     <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white">
-                        <img src="assets/img/nosotros-equipo.jpg" 
+                        <img src="/assets/img/nosotros-equipo.jpg" 
                              alt="Equipo Médico Profesional" 
                              class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110" />
-                        <div class="absolute inset-0 bg-[#0c73ba]/28"></div>
+                        <div class="absolute inset-0 bg-[#0c73ba]/[0.28]"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-[#163A5F] via-transparent to-transparent opacity-80"></div>
                         <div class="absolute bottom-0 left-0 p-8">
                             <p class="text-white text-xl font-medium leading-relaxed italic">
@@ -380,7 +361,7 @@
             <!-- Showcase Fotografía Clínica Móvil Real en Terreno -->
             <div class="mt-14 rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 bg-[#0a1c32] md:relative group">
                 <div class="relative">
-                    <img src="assets/img/clinica-mamografia-movil.jpg" 
+                    <img src="/assets/img/clinica-mamografia-movil.jpg" 
                          alt="Clínica Mamográfica Móvil de Exámenes Digitales en operativo en terreno" 
                          class="w-full h-[250px] sm:h-[320px] md:h-[480px] lg:h-[560px] object-cover object-[center_28%] transform group-hover:scale-105 transition-transform duration-700" />
                     <!-- Badge visible on mobile sobre la foto -->
@@ -406,7 +387,7 @@
                             </p>
                         </div>
                         <div class="shrink-0 flex flex-col sm:flex-row gap-3 mt-2 md:mt-0">
-                            <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" 
+                            <a href="/cotizar/" 
                                class="inline-flex items-center justify-center gap-2 bg-[#55c5e9] text-[#0f2a4a] font-black text-base px-6 py-3.5 rounded-xl hover:bg-white hover:shadow-[0_0_25px_rgba(85,197,233,0.5)] transition-all transform hover:-translate-y-0.5 shadow-lg">
                                 <i data-lucide="calendar" class="w-5 h-5"></i> Agendar Operativo
                             </a>
@@ -438,7 +419,7 @@
                 <!-- Servicio 1 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#163A5F] relative overflow-hidden">
-                        <img src="assets/img/servicio-ecografias.jpg" alt="Ecografías" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-ecografias.jpg" alt="Ecografía en terreno con equipo portátil realizada por tecnóloga médica en un CESFAM" width="1040" height="780" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#163A5F] via-[#163A5F]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="stethoscope" class="w-7 h-7 text-white"></i></div>
@@ -469,7 +450,7 @@
                         <span class="text-[9px] text-gray-400 mt-1 uppercase tracking-widest font-bold">ChileCompra</span>
                     </div>
                     <div class="h-56 bg-[#4F8A6B] relative overflow-hidden">
-                        <img src="assets/img/servicio-licitaciones.jpg" alt="Licitaciones" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-licitaciones.jpg" alt="Equipo de Exámenes Digitales en operativo de licitación pública de imagenología" width="722" height="430" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#4F8A6B] via-[#4F8A6B]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="file-check" class="w-7 h-7 text-white"></i></div>
@@ -490,7 +471,7 @@
                 <!-- Servicio 3 -->
                 <div class="bg-[#F8FAFC] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group border border-gray-100 flex flex-col h-full hover:-translate-y-2">
                     <div class="h-56 bg-[#0c73ba] relative overflow-hidden">
-                        <img src="assets/img/servicio-apoyo-centros.jpg" alt="Apoyo a Centros" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
+                        <img src="/assets/img/servicio-apoyo-centros.jpg" alt="Ecógrafo portátil instalado en box de centro médico en convenio" width="1600" height="873" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" />
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0c73ba] via-[#0c73ba]/50 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 flex items-center gap-3">
                             <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
@@ -511,7 +492,7 @@
                 <!-- Servicio 4 - Destacado (Ancho completo) -->
                 <div class="bg-gradient-to-br from-[#163A5F] to-[#1E5F74] rounded-3xl overflow-hidden shadow-xl md:col-span-2 lg:col-span-3 flex flex-col md:flex-row text-white mt-4 border border-[#55c5e9]/30">
                     <div class="md:w-2/5 relative overflow-hidden">
-                        <img src="assets/img/servicio-empresas.jpg" alt="Empresas" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
+                        <img src="/assets/img/servicio-empresas.jpg" alt="Operativo de salud preventiva para trabajadores en dependencias de una empresa" width="1600" height="893" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-50 mix-blend-overlay" />
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i data-lucide="briefcase" class="w-20 h-20 text-[#55c5e9] opacity-80"></i>
                         </div>
@@ -668,10 +649,10 @@
                                 Gane tiempo, seguridad y rapidez con un proveedor integral autorizado por la Seremi de Salud. Nuestras preocupaciones son sus preocupaciones.
                             </p>
                             <div class="flex flex-col gap-4 relative z-10">
-                                <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-[#55c5e9] text-[#163A5F] py-4 px-6 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg w-full flex items-center justify-center gap-2">
+                                <a href="/cotizar/" class="bg-[#55c5e9] text-[#163A5F] py-4 px-6 rounded-xl font-black text-lg hover:bg-white transition-all text-center shadow-lg w-full flex items-center justify-center gap-2">
                                     Cotizar Proyecto Ahora <i data-lucide="chevron-right" class="w-5 h-5"></i>
                                 </a>
-                                <a href="https://forms.gle/5fGLxHbetptahZr67" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-[#55c5e9] text-white py-4 px-6 rounded-xl font-bold hover:bg-[#55c5e9]/10 transition-colors flex items-center justify-center gap-2 w-full">
+                                <a href="/cotizar/" class="bg-transparent border-2 border-[#55c5e9] text-white py-4 px-6 rounded-xl font-bold hover:bg-[#55c5e9]/10 transition-colors flex items-center justify-center gap-2 w-full">
                                     <i data-lucide="file-text" class="w-5 h-5"></i> Completar Formulario
                                 </a>
                                 <a href="https://wa.me/56930168791" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-white/30 text-white py-4 px-6 rounded-xl font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 w-full">
@@ -798,75 +779,110 @@
             </div>
 
             <div class="bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">
-                
-                <!-- Info de contacto -->
-                <div class="lg:w-2/5 bg-gradient-to-br from-[#163A5F] to-[#1E5F74] p-12 relative overflow-hidden flex flex-col justify-between">
+
+                <div class="lg:w-2/5 bg-gradient-to-br from-[#163A5F] to-[#1E5F74] p-10 md:p-12 relative overflow-hidden flex flex-col justify-between">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-[#55c5e9] rounded-full blur-[100px] opacity-30 mix-blend-screen -mr-20 -mt-20"></div>
-                    
                     <div class="relative z-10">
                         <h3 class="text-3xl font-black mb-10 text-white">Datos de Contacto</h3>
-                        
                         <div class="space-y-8">
                             <div class="flex items-start gap-5">
                                 <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="phone" class="w-6 h-6 text-[#55c5e9]"></i></div>
                                 <div>
-                                    <p class="font-bold text-lg text-white mb-1">WhatsApp y Call Center</p>
-                                    <a href="https://wa.me/56930168791" target="_blank" class="text-blue-100 text-lg hover:text-white transition-colors block">+56 9 3016 8791</a>
-                                    <a href="https://wa.me/56999187629" target="_blank" class="text-blue-100 text-lg hover:text-white transition-colors block">+56 9 9918 7629</a>
+                                    <p class="font-bold text-lg text-white mb-1">Teléfono y WhatsApp</p>
+                                    <a href="tel:+56930168791" class="text-blue-100 text-lg hover:text-white transition-colors block">+56 9 3016 8791</a>
+                                    <a href="https://wa.me/56999187629" target="_blank" rel="noopener noreferrer" class="text-blue-100 text-lg hover:text-white transition-colors block">+56 9 9918 7629 <span class="text-sm opacity-80">(solo WhatsApp)</span></a>
                                 </div>
                             </div>
                             <div class="flex items-start gap-5">
                                 <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="mail" class="w-6 h-6 text-[#55c5e9]"></i></div>
                                 <div>
                                     <p class="font-bold text-lg text-white mb-1">Correo Electrónico</p>
-                                    <a href="mailto:examenesdigitales@gmail.com" class="text-blue-100 text-md break-all hover:text-white transition-colors block">examenesdigitales@gmail.com</a>
+                                    <a href="mailto:contacto@examenesdigitales.cl" class="text-blue-100 text-base break-all hover:text-white transition-colors block">contacto@examenesdigitales.cl</a>
                                 </div>
                             </div>
                             <div class="flex items-start gap-5">
                                 <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="map-pin" class="w-6 h-6 text-[#55c5e9]"></i></div>
                                 <div>
                                     <p class="font-bold text-lg text-white mb-1">Sede Central</p>
-                                    <p class="text-blue-100 text-md">Lampa, Región Metropolitana.</p>
-                                    <div class="inline-block bg-[#4F8A6B] text-white text-xs font-bold px-3 py-1 rounded-full mt-2">
-                                        Operación a Nivel Nacional
-                                    </div>
+                                    <p class="text-blue-100 text-base">Lampa, Región Metropolitana.</p>
+                                    <div class="inline-block bg-[#4F8A6B] text-white text-xs font-bold px-3 py-1 rounded-full mt-2">Operación a Nivel Nacional</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="bg-white/10 p-3 rounded-full shrink-0 backdrop-blur-sm"><i data-lucide="clock" class="w-6 h-6 text-[#55c5e9]"></i></div>
+                                <div>
+                                    <p class="font-bold text-lg text-white mb-1">Horario comercial</p>
+                                    <p class="text-blue-100 text-base">Lunes a viernes, 9:00 a 18:00 h.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Formulario -->
-                <div class="lg:w-3/5 p-12 bg-white">
-                    <h3 class="text-2xl font-black text-[#163A5F] mb-8">Solicitud de Propuesta Institucional</h3>
-                    
+                <div class="lg:w-3/5 p-8 md:p-12 bg-white">
+                    <h3 class="text-2xl font-black text-[#163A5F] mb-6">Solicitud de Propuesta Institucional</h3>
 
-<div class="space-y-6">
-    <p class="text-gray-600 leading-relaxed text-lg">
-        Para solicitar una propuesta institucional, convenio, operativo de salud o cotización,
-        complete nuestro formulario en línea. Nuestro equipo revisará su requerimiento y se
-        comunicará a la brevedad con usted.
-    </p>
-
-    <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl p-6 shadow-sm">
-        <h4 class="text-[#163A5F] font-bold text-xl mb-3">Formulario de Contacto Institucional</h4>
-        <p class="text-gray-600 mb-5 leading-relaxed">
-            Haga clic en el siguiente botón para abrir el formulario oficial de Exámenes Digitales
-            y enviar su solicitud.
-        </p>
-
-        <a
-            href="https://forms.gle/5fGLxHbetptahZr67"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-[#0c73ba] text-white font-black text-lg py-4 px-10 rounded-xl hover:bg-[#163A5F] hover:shadow-[0_10px_20px_rgba(12,115,186,0.3)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-2 text-center"
-        >
-            Completar Solicitud Institucional
-        </a>
-    </div>
-</div>
-
-
+                    <form id="form-solicitud" class="space-y-5" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSexdXe010Pha5HG_CNOSR-qAVQ6-9O0zK7nyl-LHSAeJ5K3dA/formResponse" target="gform-sink" data-gform novalidate>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="f-nombre" class="block text-sm font-bold text-[#163A5F] mb-1.5">Nombre del solicitante <span class="text-[#a52216]">*</span></label>
+                                <input id="f-nombre" name="entry.1960090839" type="text" required autocomplete="name" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-institucion" class="block text-sm font-bold text-[#163A5F] mb-1.5">Institución / Empresa / Centro <span class="text-[#a52216]">*</span></label>
+                                <input id="f-institucion" name="entry.1299281272" type="text" required autocomplete="organization" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-correo" class="block text-sm font-bold text-[#163A5F] mb-1.5">Correo electrónico <span class="text-[#a52216]">*</span></label>
+                                <input id="f-correo" name="entry.124684158" type="email" required autocomplete="email" inputmode="email" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-telefono" class="block text-sm font-bold text-[#163A5F] mb-1.5">Teléfono / WhatsApp <span class="text-[#a52216]">*</span></label>
+                                <input id="f-telefono" name="entry.1864935225" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+56 9 ..." class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="f-tipo" class="block text-sm font-bold text-[#163A5F] mb-1.5">Tipo de requerimiento <span class="text-[#a52216]">*</span></label>
+                                <select id="f-tipo" name="entry.580446858" required class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                                    <option value="" disabled selected>Seleccione…</option>
+                                    <option>Solicitar cotización</option>
+                                    <option>Convenio institucional</option>
+                                    <option>Operativo de salud para empresa</option>
+                                    <option>Licitación pública</option>
+                                    <option>Reunión comercial</option>
+                                    <option>Consulta general</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="f-lugar" class="block text-sm font-bold text-[#163A5F] mb-1.5">Comuna / Ciudad / Región <span class="text-[#a52216]">*</span></label>
+                                <input id="f-lugar" name="entry.2055907999" type="text" required placeholder="Ej.: Illapel, Región de Coquimbo" class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="f-detalle" class="block text-sm font-bold text-[#163A5F] mb-1.5">Detalle de su requerimiento <span class="text-[#a52216]">*</span></label>
+                            <textarea id="f-detalle" name="entry.804339692" rows="4" required placeholder="Exámenes requeridos, volumen estimado de pacientes, fechas tentativas y lugar de atención." class="w-full rounded-xl border border-gray-300 bg-[#F8FAFC] px-4 py-3 text-[#163A5F] focus:outline-none focus:ring-2 focus:ring-[#55c5e9] focus:border-transparent"></textarea>
+                        </div>
+                        <fieldset>
+                            <legend class="block text-sm font-bold text-[#163A5F] mb-2">¿Cómo prefiere que lo contactemos? <span class="text-[#a52216]">*</span></legend>
+                            <div class="flex flex-wrap gap-x-6 gap-y-2 text-[#163A5F]">
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="entry.1022401746" value="WhatsApp" checked class="w-4 h-4 accent-[#0c73ba]"> WhatsApp</label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="entry.1022401746" value="Teléfono" class="w-4 h-4 accent-[#0c73ba]"> Teléfono</label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer"><input type="checkbox" name="entry.1022401746" value="Correo electrónico" class="w-4 h-4 accent-[#0c73ba]"> Correo electrónico</label>
+                            </div>
+                        </fieldset>
+                        <!-- Campo trampa anti-spam (oculto a personas) -->
+                        <div class="hidden" aria-hidden="true"><label>Sitio web<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                        <p id="form-error" class="hidden text-sm font-semibold text-[#a52216]" role="alert"></p>
+                        <button type="submit" class="bg-[#0c73ba] text-white font-black text-lg py-4 px-10 rounded-xl hover:bg-[#163A5F] hover:shadow-[0_10px_20px_rgba(12,115,186,0.3)] hover:-translate-y-1 transition-all w-full flex items-center justify-center gap-2 text-center disabled:opacity-60 disabled:cursor-wait">
+                            <span data-label>Enviar solicitud</span> <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                        <p class="text-xs text-gray-500 leading-relaxed">Sus datos se usan únicamente para responder esta solicitud. Respondemos en horario hábil, normalmente el mismo día.</p>
+                    </form>
+                    <iframe name="gform-sink" title="envío" class="hidden" tabindex="-1" aria-hidden="true"></iframe>
+                    <div id="form-ok" class="hidden text-center py-10" role="status" aria-live="polite">
+                        <div class="mx-auto w-20 h-20 rounded-full bg-[#4F8A6B]/10 flex items-center justify-center mb-6"><i data-lucide="check-circle-2" class="w-10 h-10 text-[#4F8A6B]"></i></div>
+                        <h4 class="text-2xl font-black text-[#163A5F] mb-3">Solicitud recibida</h4>
+                        <p class="text-gray-600 leading-relaxed mb-8 max-w-md mx-auto">Gracias. Nuestro equipo comercial revisará su requerimiento y se comunicará con usted a la brevedad. Si prefiere avanzar ahora mismo, continúe por WhatsApp con su solicitud ya redactada.</p>
+                        <a id="form-ok-wa" href="https://wa.me/56930168791" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-black py-4 px-8 rounded-xl hover:brightness-110 transition-all shadow-lg"><i data-lucide="message-circle" class="w-5 h-5"></i> Continuar por WhatsApp</a>
+                    </div>
                 </div>
 
             </div>
@@ -886,39 +902,40 @@
                         <span class="text-white font-black text-2xl tracking-wide uppercase">Exámenes <span class="text-[#55c5e9]">Digitales</span></span>
                     </div>
                     <p class="text-sm mb-8 leading-relaxed text-gray-400 font-light max-w-md">
-                        Empresa chilena líder en la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
+                        Empresa chilena dedicada a la prestación de servicios integrales de diagnóstico por imágenes en terreno. Apoyamos la salud pública y privada resolviendo listas de espera con excelencia técnica y humana, donde el sistema lo necesita.
                     </p>
                     <div class="flex gap-4">
-                        <a href="https://wa.me/56930168791" target="_blank" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
-                        <a href="mailto:examenesdigitales@gmail.com" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        <a href="https://wa.me/56930168791?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20los%20servicios%20institucionales%20de%20Ex%C3%A1menes%20Digitales." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="bg-white/5 p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all border border-white/10"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                        <a href="mailto:contacto@examenesdigitales.cl" aria-label="Correo" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                        <a href="tel:+56930168791" aria-label="Teléfono" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="phone" class="w-5 h-5"></i></a>
+                        <a href="https://www.facebook.com/examenesdigitales" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="bg-white/5 p-3 rounded-full hover:bg-[#0c73ba] hover:text-white transition-all border border-white/10"><i data-lucide="facebook" class="w-5 h-5"></i></a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Navegación</h4>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Servicios</h4>
                     <ul class="space-y-4 text-sm font-medium">
-                        <li><button onclick="scrollToSection('inicio')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Inicio</button></li>
-                        <li><button onclick="scrollToSection('nosotros')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Quiénes Somos</button></li>
-                        <li><button onclick="scrollToSection('servicios')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Catálogo de Servicios</button></li>
-                        <li><button onclick="scrollToSection('equipamiento')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Tecnología y Equipos</button></li>
-                        <li><button onclick="scrollToSection('movil')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</button></li>
-                        <li><button onclick="scrollToSection('experiencia')" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Clientes y Licitaciones</button></li>
+                        <li><a href="/mamografia-movil/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Mamografía Móvil</a></li>
+                        <li><a href="/ecografia-en-terreno/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Ecografía en Terreno</a></li>
+                        <li><a href="/examenes-ges/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Cumplimiento GES</a></li>
+                        <li><a href="/convenios-institucionales/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Convenios Institucionales</a></li>
+                        <li><a href="/experiencia/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4"></i> Experiencia y Respaldo</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Atención a Pacientes</h4>
-                    <div class="bg-[#163A5F] p-5 rounded-xl border border-white/10">
-                        <p class="text-xs text-blue-200 mb-4 leading-relaxed">
-                            Acceso exclusivo para pacientes que se realizaron exámenes en nuestros operativos en terreno.
-                        </p>
-                        <a href="#" class="block w-full text-center bg-[#55c5e9] text-[#0f2a4a] font-bold text-sm py-3 px-4 rounded-lg hover:bg-white transition-colors">
-                            Ingresar al Portal Web
-                        </a>
-                    </div>
+                    <h4 class="text-white font-black mb-6 uppercase text-sm tracking-widest">Contacto</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="tel:+56930168791" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> +56 9 3016 8791</a></li>
+                        <li><a href="https://wa.me/56999187629" target="_blank" rel="noopener noreferrer" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> +56 9 9918 7629 (WhatsApp)</a></li>
+                        <li><a href="mailto:contacto@examenesdigitales.cl" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contacto@examenesdigitales.cl</a></li>
+                        <li><a href="/cotizar/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Solicitar cotización</a></li>
+                        <li><a href="/blog/" class="hover:text-[#55c5e9] transition-colors flex items-center gap-2"><i data-lucide="newspaper" class="w-4 h-4"></i> Blog y Noticias</a></li>
+                        <li><span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> Lampa, Región Metropolitana · Cobertura nacional</span></li>
+                    </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500">
                 <p>© 2026 Exámenes Digitales S.P.A. Todos los derechos reservados.</p>
                 <div class="flex gap-6">
@@ -929,37 +946,10 @@
         </div>
     </footer>
 
-    <!-- Scripts de interactividad -->
-    <script>
-        // Inicializar íconos Lucide
-        lucide.createIcons();
+    
+</body>
+</html>
 
-        // Manejar scroll del header
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-                header.classList.remove('bg-transparent');
-            } else {
-                header.classList.remove('scrolled');
-                header.classList.add('bg-transparent');
-            }
-        });
-
-        // Navegación suave
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mobile-menu').classList.add('hidden');
-            }
-        }
-
-        // Menú móvil
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.toggle('hidden');
-        }
-    </script>
+    <script src="/js/main.js" defer></script>
 </body>
 </html>
