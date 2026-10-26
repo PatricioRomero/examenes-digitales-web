@@ -629,9 +629,9 @@ ${bullets([
       breadcrumb: [['Inicio', '/'], ['Blog', null]],
     }) + contentSection('bg-white', `
 ${featureGrid([
+  ['calendar', 'Exámenes Digitales estará en ExpoSalud 2026', 'Del 10 al 12 de noviembre, en Espacio Riesco, exhibiremos la clínica móvil de mamografía y presentaremos nuestros programas de mamografía y ecografía en terreno para municipios, servicios de salud y empresas. <br/><br/><a href="/blog/examenes-digitales-en-exposalud-2026/" class="text-[#0c73ba] font-bold hover:underline">Leer noticia →</a>'],
   ['newspaper', '¿Cómo se realiza un operativo de mamografía móvil?', 'Paso a paso del proceso: coordinación, despliegue de la unidad, realización de exámenes y entrega de resultados. <br/><br/><a href="/blog/como-se-realiza-un-operativo-de-mamografia-movil/" class="text-[#0c73ba] font-bold hover:underline">Leer artículo →</a>'],
   ['file-text', 'Próximamente: cumplimiento de metas GES', 'Artículo en preparación sobre planificación de la demanda y cierre de año.'],
-  ['calendar', 'Próximamente: operativos por comuna', 'Publicaremos el detalle de los operativos que realicemos en cada comuna.'],
 ], 3)}
 `) + ctaBand('¿Necesita coordinar un operativo?', 'Escríbanos y le responderemos a la brevedad.'),
   });
@@ -686,6 +686,84 @@ ${featureGrid([
                 <p class="text-gray-600 leading-relaxed">Cuando existe una población objetivo que no accede oportunamente al examen por barreras geográficas o de transporte, cuando se requiere reforzar la capacidad diagnóstica para cumplir metas sanitarias, o cuando una organización quiere ofrecer salud preventiva a sus colaboradores en sus propias dependencias.</p>
             </article>
 `) + faqSection(faqs) + ctaBand('Coordine su operativo de mamografía móvil', 'Escríbanos y evaluemos juntos el mejor plan para su institución.'),
+  });
+}
+
+/* 8. Noticia: ExpoSalud 2026 */
+{
+  const path_ = '/blog/examenes-digitales-en-exposalud-2026/';
+  const headline = 'Exámenes Digitales estará en ExpoSalud 2026 con su clínica móvil de mamografía';
+  const desc = 'Del 10 al 12 de noviembre de 2026, en Espacio Riesco (Huechuraba), Exámenes Digitales exhibirá su unidad móvil de mamografía digital y presentará sus programas de mamografía y ecografía en terreno para municipios, servicios de salud y empresas.';
+  const img = `${SITE}/assets/img/clinica-mamografia-movil.jpg`;
+  pages.push({
+    out: `${path_}index.html`,
+    head: {
+      title: 'Exámenes Digitales en ExpoSalud 2026: clínica móvil de mamografía | Exámenes Digitales',
+      description: desc,
+      canonical: `${SITE}${path_}`,
+      jsonld: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          { '@type': 'NewsArticle', headline, description: desc, image: [img], datePublished: '2026-10-24', dateModified: '2026-10-24', inLanguage: 'es-CL', mainEntityOfPage: `${SITE}${path_}`, author: { '@type': 'Organization', name: 'Exámenes Digitales SpA' }, publisher: bizRef },
+          { '@type': 'Event', name: 'Exámenes Digitales en ExpoSalud 2026', description: 'Exhibición de la clínica móvil de mamografía de Exámenes Digitales en ExpoSalud 2026.', startDate: '2026-11-10', endDate: '2026-11-12', eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: 'Espacio Riesco', address: { '@type': 'PostalAddress', streetAddress: 'Av. El Salto 5000', addressLocality: 'Huechuraba', addressRegion: 'Región Metropolitana', addressCountry: 'CL' } }, organizer: { '@type': 'Organization', name: 'ExpoSalud', url: 'https://www.expo-salud.cl/' }, performer: { '@type': 'Organization', name: 'Exámenes Digitales SpA' }, image: [img] },
+          { '@type': 'BreadcrumbList', itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
+            { '@type': 'ListItem', position: 3, name: 'ExpoSalud 2026', item: `${SITE}${path_}` },
+          ] },
+        ],
+      }, null, 2),
+    },
+    body: hero({
+      badge: 'Noticias',
+      h1: 'Exámenes Digitales estará en <span class="text-[#55c5e9]">ExpoSalud 2026</span> con su clínica móvil de mamografía',
+      lead: 'Del 10 al 12 de noviembre, en Espacio Riesco, exhibiremos nuestra unidad móvil de mamografía digital y presentaremos los programas de mamografía y ecografía en terreno con que apoyamos a municipios, servicios de salud y empresas en todo Chile.',
+      breadcrumb: [['Inicio', '/'], ['Blog', '/blog/'], ['ExpoSalud 2026', null]],
+    }) + contentSection('bg-white', `
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <article class="lg:col-span-2 max-w-3xl">
+                    <figure class="mb-10 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+                        <img src="/assets/img/clinica-mamografia-movil.jpg" alt="Clínica móvil de mamografía de Exámenes Digitales instalada en un operativo en terreno" width="2048" height="1153" loading="lazy" decoding="async" class="w-full h-auto object-cover">
+                        <figcaption class="text-xs text-gray-500 px-5 py-3 bg-[#F8FAFC]">La unidad móvil que se exhibirá en ExpoSalud 2026, durante un operativo en terreno.</figcaption>
+                    </figure>
+
+                    <p class="text-lg text-[#163A5F] font-semibold leading-relaxed mb-8">Con más de diez años de operación y más de 44 contratos con hospitales, CESFAM y municipalidades, Exámenes Digitales SpA confirmó su participación en ExpoSalud 2026, la exhibición internacional de salud que este año tiene como eje temático el cáncer. En nuestro stand estará la clínica móvil de mamografía con que realizamos operativos de detección precoz en distintas regiones del país.</p>
+
+                    <h2 class="text-3xl font-black text-[#163A5F] mb-4">El examen llega al lugar donde está la paciente</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">El propósito es acercar la detección precoz del cáncer de mama a las comunas y a las trabajadoras que hoy postergan el examen por distancia, listas de espera o dificultad para ausentarse del trabajo. Nuestra propuesta invierte la lógica tradicional: en lugar de esperar que la paciente llegue al centro de salud, el examen viaja hacia ella.</p>
+                    <p class="text-gray-600 leading-relaxed mb-10">La unidad móvil cuenta con mamógrafo digital, autorización sanitaria y blindaje radiológico certificado. Se instala en dependencias del mandante y atiende hasta 50 pacientes por jornada, con un flujo de citación cada diez minutos coordinado por personal propio.</p>
+
+                    <h2 class="text-3xl font-black text-[#163A5F] mb-4">Informes en uno a dos días hábiles y alerta de hallazgos críticos</h2>
+                    <p class="text-gray-600 leading-relaxed mb-10">Los informes radiológicos se emiten en uno a dos días hábiles y se envían por correo electrónico a cada paciente, con acceso a sus imágenes desde el celular. Ante hallazgos críticos, notificamos a la paciente y a la contraparte institucional dentro de 24 horas, y al cierre entregamos un reporte consolidado del operativo que permite a los equipos de salud dar continuidad al proceso diagnóstico sin trámites adicionales.</p>
+
+                    <h2 class="text-3xl font-black text-[#163A5F] mb-4">Ecografía en terreno y exámenes complementarios</h2>
+                    <p class="text-gray-600 leading-relaxed mb-10">Junto a la mamografía presentaremos nuestro servicio de ecografía en terreno con equipos portátiles, que permite realizar ecografías mamarias, abdominales y de otras especialidades en una sala de consultorio o en la sede de una empresa, sin necesidad de movilizar la unidad móvil. Para programas corporativos integramos además la toma de muestras de laboratorio a través de un laboratorio asociado, de modo que el operativo completo quede bajo un solo proveedor.</p>
+
+                    <h2 class="text-3xl font-black text-[#163A5F] mb-4">Para municipios, servicios de salud y empresas</h2>
+                    <p class="text-gray-600 leading-relaxed mb-10">Este modelo ha permitido a servicios de salud municipales reducir listas de espera de mamografía y ecografía sin invertir en infraestructura propia, y a empresas públicas y privadas cumplir el permiso preventivo ordenado por el artículo 66 bis del Código del Trabajo, concentrando en una jornada exámenes que de otro modo se dispersarían en semanas de ausencias individuales.</p>
+                    <p class="text-gray-600 leading-relaxed">Durante ExpoSalud 2026 los visitantes podrán recorrer la clínica móvil y conversar con nuestro equipo técnico sobre cómo organizar un operativo en su comuna, servicio de salud o empresa.</p>
+                </article>
+
+                <aside class="lg:sticky lg:top-28 space-y-6">
+                    <div class="bg-[#163A5F] text-white rounded-3xl p-8 shadow-xl">
+                        <span class="text-[#55c5e9] font-black tracking-widest uppercase text-xs">Visítenos</span>
+                        <h3 class="text-2xl font-black mt-2 mb-6">ExpoSalud 2026</h3>
+                        <ul class="space-y-4 text-blue-100">
+                            <li class="flex items-start gap-3"><i data-lucide="calendar" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i><span><strong class="text-white">10, 11 y 12 de noviembre de 2026</strong></span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="map-pin" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i><span>Espacio Riesco<br/>Av. El Salto 5000, Huechuraba</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="truck" class="w-5 h-5 text-[#55c5e9] shrink-0 mt-0.5"></i><span>Clínica móvil de mamografía en exhibición</span></li>
+                        </ul>
+                        <a href="https://www.expo-salud.cl/" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#55c5e9] hover:text-white transition-colors">Sitio oficial de ExpoSalud <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                    </div>
+                    <div class="bg-[#F8FAFC] border border-gray-200 rounded-3xl p-8">
+                        <h3 class="text-xl font-black text-[#163A5F] mb-3">¿Quiere agendar una reunión en la feria?</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">Coordinemos con anticipación una visita a la clínica móvil o una reunión con nuestro equipo técnico.</p>
+                        <a href="/cotizar/?tipo=Reuni%C3%B3n%20comercial&servicio=Reuni%C3%B3n%20en%20ExpoSalud%202026" class="block text-center bg-[#0c73ba] text-white font-black py-3.5 px-6 rounded-xl hover:bg-[#163A5F] transition-colors">Agendar reunión</a>
+                        <a href="${waLink('Hola, quisiera coordinar una reunión con Exámenes Digitales en ExpoSalud 2026.')}" target="_blank" rel="noopener noreferrer" class="mt-3 block text-center border-2 border-[#25D366] text-[#163A5F] font-bold py-3 px-6 rounded-xl hover:bg-[#25D366]/10 transition-colors">Escribir por WhatsApp</a>
+                    </div>
+                </aside>
+            </div>
+`) + ctaBand('Lleve la detección precoz a su comuna o empresa', 'Cuéntenos cuántas pacientes necesita atender y en qué plazo; le propondremos un operativo a la medida.', 'Solicitar cotización'),
   });
 }
 
@@ -916,6 +994,7 @@ const urls = [
   { loc: '/cotizar/', priority: '0.8', freq: 'monthly' },
   { loc: '/blog/', priority: '0.6', freq: 'weekly' },
   { loc: '/blog/como-se-realiza-un-operativo-de-mamografia-movil/', priority: '0.6', freq: 'yearly' },
+  { loc: '/blog/examenes-digitales-en-exposalud-2026/', priority: '0.7', freq: 'monthly' },
 ];
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
