@@ -165,3 +165,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// Video institucional: fachada liviana (póster + botón). El video solo se descarga
+// al hacer clic, y se elige 720p en pantallas pequeñas o conexiones lentas.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('[data-video-player]').forEach(function (box) {
+    var btn = box.querySelector('button');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var c = navigator.connection || {};
+      var slow = c.saveData || /(^|-)2g$|^3g$/.test(c.effectiveType || '');
+      var small = Math.min(window.innerWidth, window.innerHeight) * (window.devicePixelRatio || 1) < 900;
+      var v = document.createElement('video');
+      v.src = (slow || small) ? box.dataset.srcSd : box.dataset.srcHd;
+      v.poster = box.dataset.poster;
+      v.controls = true;
+      v.autoplay = true;
+      v.playsInline = true;
+      v.preload = 'auto';
+      v.setAttribute('playsinline', '');
+      v.className = 'absolute inset-0 w-full h-full bg-black';
+      v.setAttribute('aria-label', 'Video institucional de Exámenes Digitales');
+      box.replaceChild(v, btn);
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+      if (window.gtag) window.gtag('event', 'video_start', { video_title: 'Estamos donde nos necesite' });
+    }, { once: true });
+  });
+});
