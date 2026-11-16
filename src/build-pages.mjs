@@ -629,7 +629,7 @@ ${bullets([
       breadcrumb: [['Inicio', '/'], ['Blog', null]],
     }) + contentSection('bg-white', `
 ${featureGrid([
-  ['award', 'Así vivimos ExpoSalud 2026', 'Tres jornadas en Espacio Riesco con nuestra clínica móvil de mamografía abierta a recorridos y un stand dedicado a la detección precoz del cáncer de mama. <br/><br/><a href="/blog/exposalud-2026-balance/" class="text-[#0c73ba] font-bold hover:underline">Leer crónica →</a>'],
+  ['award', 'Así vivimos ExpoSalud 2026', 'Tres jornadas en Espacio Riesco con nuestra clínica móvil de mamografía abierta a recorridos, que contó con la visita del exministro de Salud Dr. Enrique Paris. <br/><br/><a href="/blog/exposalud-2026-balance/" class="text-[#0c73ba] font-bold hover:underline">Leer crónica →</a>'],
   ['calendar', 'Exámenes Digitales estará en ExpoSalud 2026', 'Del 10 al 12 de noviembre, en Espacio Riesco, exhibiremos la clínica móvil de mamografía y presentaremos nuestros programas de mamografía y ecografía en terreno para municipios, servicios de salud y empresas. <br/><br/><a href="/blog/examenes-digitales-en-exposalud-2026/" class="text-[#0c73ba] font-bold hover:underline">Leer noticia →</a>'],
   ['newspaper', '¿Cómo se realiza un operativo de mamografía móvil?', 'Paso a paso del proceso: coordinación, despliegue de la unidad, realización de exámenes y entrega de resultados. <br/><br/><a href="/blog/como-se-realiza-un-operativo-de-mamografia-movil/" class="text-[#0c73ba] font-bold hover:underline">Leer artículo →</a>'],
   ['file-text', 'Próximamente: cumplimiento de metas GES', 'Artículo en preparación sobre planificación de la demanda y cierre de año.'],
@@ -772,7 +772,7 @@ ${featureGrid([
 {
   const path_ = '/blog/exposalud-2026-balance/';
   const headline = 'Así vivimos ExpoSalud 2026: la clínica móvil de mamografía abrió sus puertas en Espacio Riesco';
-  const desc = 'Exámenes Digitales cerró su participación en ExpoSalud 2026 con la clínica móvil de mamografía abierta a recorridos y un stand dedicado a la detección precoz del cáncer de mama, en la feria cuyo eje temático este año fue el cáncer.';
+  const desc = 'Exámenes Digitales cerró su participación en ExpoSalud 2026 con la clínica móvil de mamografía abierta a recorridos, que recibió la visita del exministro de Salud Dr. Enrique Paris, y un stand dedicado a la detección precoz del cáncer de mama.';
   const img = `${SITE}/assets/img/exposalud-2026-clinica.jpg`;
   const fig = (src, alt, w, h, cap) => `
                     <figure class="max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white">
@@ -804,16 +804,20 @@ ${featureGrid([
       breadcrumb: [['Inicio', '/'], ['Blog', '/blog/'], ['ExpoSalud 2026: balance', null]],
     }) + contentSection('bg-white', `
             <div class="max-w-4xl mx-auto">
-                ${fig('exposalud-2026-clinica.jpg', 'Equipo de Exámenes Digitales junto a la clínica móvil de mamografía en el acceso de Espacio Riesco', 1153, 1400, 'Nuestro equipo junto a la clínica móvil de mamografía, instalada en el espacio exterior de Espacio Riesco, junto a la entrada de la feria.')}
+                ${fig('exposalud-2026-clinica.jpg', 'El Dr. Enrique Paris, exministro de Salud, junto al equipo de Exámenes Digitales frente a la clínica móvil de mamografía', 1153, 1400, 'El Dr. Enrique Paris, exministro de Salud, junto a nuestro equipo frente a la clínica móvil, instalada en el espacio exterior de Espacio Riesco.')}
 
                 <div class="mt-12 space-y-6 text-gray-600 text-lg leading-relaxed">
                     <p class="text-xl text-[#163A5F] font-semibold">ExpoSalud 2026 tuvo como eje temático el cáncer, y para Exámenes Digitales fue la oportunidad de mostrar en terreno lo que hacemos todos los días: llevar el examen hasta donde está la paciente.</p>
                     <p>La unidad móvil se instaló en el espacio exterior del recinto, junto a la entrada, y permaneció abierta durante las tres jornadas. Los visitantes pudieron recorrer su interior, conocer el mamógrafo digital y el ecógrafo portátil con que realizamos los operativos, y comprobar que la unidad reúne en pocos metros cuadrados las condiciones de un servicio de imagenología: sala de examen con blindaje radiológico, estación de adquisición y espacio de atención para la paciente.</p>
                 </div>
 
+                <h2 class="text-3xl font-black text-[#163A5F] mt-14 mb-6">La visita del Dr. Enrique Paris</h2>
+                <div class="mb-8 space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>Entre las visitas que recibimos destacó la del Dr. Enrique Paris, quien encabezó el Ministerio de Salud entre 2020 y 2022 y participó en ExpoSalud 2026 como moderador del panel «Desafíos sanitarios de Chile al 2030». Recorrió el interior de la clínica móvil junto a nuestro equipo, que le explicó el funcionamiento de la unidad y el modelo de operativos en terreno con que acercamos la detección precoz del cáncer de mama a las comunas.</p>
+                </div>
+                ${fig('exposalud-2026-interior.jpg', 'El Dr. Enrique Paris recorre el interior de la clínica móvil de mamografía guiado por el equipo de Exámenes Digitales', 1400, 1399, 'El Dr. Enrique Paris recorre el interior de la unidad: sala de mamografía digital, ecógrafo portátil y estación de adquisición.')}
                 <h2 class="text-3xl font-black text-[#163A5F] mt-14 mb-6">Recorridos por la clínica móvil</h2>
-                ${fig('exposalud-2026-interior.jpg', 'Recorrido guiado por el interior de la clínica móvil de mamografía, con el mamógrafo digital y el ecógrafo portátil', 1400, 1399, 'Recorrido por el interior de la unidad: sala de mamografía digital, ecógrafo portátil y estación de adquisición.')}
-                <div class="mt-8 space-y-6 text-gray-600 text-lg leading-relaxed">
+                <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
                     <p>Nuestro equipo técnico explicó en cada recorrido cómo se organiza un operativo: la coordinación previa con el municipio, el servicio de salud o la empresa; la citación de las pacientes; la atención de hasta 50 mamografías por jornada; y la entrega de los informes radiológicos en uno a dos días hábiles, con aviso inmediato a la contraparte institucional ante hallazgos críticos.</p>
                     <p>En los recorridos abordamos dos necesidades que vemos a diario: reducir listas de espera de mamografía y ecografía en la atención primaria, y facilitar a las empresas el cumplimiento del permiso preventivo que establece el artículo 66 bis del Código del Trabajo, concentrando en una sola jornada exámenes que de otro modo se dispersarían en semanas.</p>
                 </div>
