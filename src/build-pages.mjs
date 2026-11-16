@@ -629,6 +629,7 @@ ${bullets([
       breadcrumb: [['Inicio', '/'], ['Blog', null]],
     }) + contentSection('bg-white', `
 ${featureGrid([
+  ['award', 'Así vivimos ExpoSalud 2026', 'Tres jornadas en Espacio Riesco con nuestra clínica móvil de mamografía abierta a recorridos y un stand dedicado a la detección precoz del cáncer de mama. <br/><br/><a href="/blog/exposalud-2026-balance/" class="text-[#0c73ba] font-bold hover:underline">Leer crónica →</a>'],
   ['calendar', 'Exámenes Digitales estará en ExpoSalud 2026', 'Del 10 al 12 de noviembre, en Espacio Riesco, exhibiremos la clínica móvil de mamografía y presentaremos nuestros programas de mamografía y ecografía en terreno para municipios, servicios de salud y empresas. <br/><br/><a href="/blog/examenes-digitales-en-exposalud-2026/" class="text-[#0c73ba] font-bold hover:underline">Leer noticia →</a>'],
   ['newspaper', '¿Cómo se realiza un operativo de mamografía móvil?', 'Paso a paso del proceso: coordinación, despliegue de la unidad, realización de exámenes y entrega de resultados. <br/><br/><a href="/blog/como-se-realiza-un-operativo-de-mamografia-movil/" class="text-[#0c73ba] font-bold hover:underline">Leer artículo →</a>'],
   ['file-text', 'Próximamente: cumplimiento de metas GES', 'Artículo en preparación sobre planificación de la demanda y cierre de año.'],
@@ -762,6 +763,80 @@ ${featureGrid([
                         <a href="${waLink('Hola, quisiera coordinar una reunión con Exámenes Digitales en ExpoSalud 2026.')}" target="_blank" rel="noopener noreferrer" class="mt-3 block text-center border-2 border-[#25D366] text-[#163A5F] font-bold py-3 px-6 rounded-xl hover:bg-[#25D366]/10 transition-colors">Escribir por WhatsApp</a>
                     </div>
                 </aside>
+            </div>
+`) + ctaBand('Lleve la detección precoz a su comuna o empresa', 'Cuéntenos cuántas pacientes necesita atender y en qué plazo; le propondremos un operativo a la medida.', 'Solicitar cotización'),
+  });
+}
+
+/* 9. Crónica: balance de ExpoSalud 2026 */
+{
+  const path_ = '/blog/exposalud-2026-balance/';
+  const headline = 'Así vivimos ExpoSalud 2026: la clínica móvil de mamografía abrió sus puertas en Espacio Riesco';
+  const desc = 'Exámenes Digitales cerró su participación en ExpoSalud 2026 con la clínica móvil de mamografía abierta a recorridos y un stand dedicado a la detección precoz del cáncer de mama, en la feria cuyo eje temático este año fue el cáncer.';
+  const img = `${SITE}/assets/img/exposalud-2026-clinica.jpg`;
+  const fig = (src, alt, w, h, cap) => `
+                    <figure class="max-w-2xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white">
+                        <img src="/assets/img/${src}" alt="${alt}" width="${w}" height="${h}" decoding="async" class="w-full h-auto object-cover">
+                        <figcaption class="text-sm text-gray-600 px-5 py-3 bg-[#F8FAFC]">${cap}</figcaption>
+                    </figure>`;
+  pages.push({
+    out: `${path_}index.html`,
+    head: {
+      title: 'Así vivimos ExpoSalud 2026 | Exámenes Digitales',
+      description: desc,
+      canonical: `${SITE}${path_}`,
+      jsonld: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          { '@type': 'NewsArticle', headline, description: desc, image: [img, `${SITE}/assets/img/exposalud-2026-stand.jpg`, `${SITE}/assets/img/exposalud-2026-interior.jpg`], datePublished: '2026-11-16', dateModified: '2026-11-16', inLanguage: 'es-CL', mainEntityOfPage: `${SITE}${path_}`, author: { '@type': 'Organization', name: 'Exámenes Digitales SpA' }, publisher: bizRef },
+          { '@type': 'BreadcrumbList', itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
+            { '@type': 'ListItem', position: 3, name: 'ExpoSalud 2026: balance', item: `${SITE}${path_}` },
+          ] },
+        ],
+      }, null, 2),
+    },
+    body: hero({
+      badge: 'Noticias',
+      h1: 'Así vivimos <span class="text-[#55c5e9]">ExpoSalud 2026</span>',
+      lead: 'Durante tres jornadas, del 10 al 12 de noviembre en Espacio Riesco, nuestra clínica móvil de mamografía estuvo abierta a recorridos y nuestro stand reunió a profesionales, directivos y visitantes interesados en llevar la detección precoz del cáncer de mama a sus comunas y empresas.',
+      breadcrumb: [['Inicio', '/'], ['Blog', '/blog/'], ['ExpoSalud 2026: balance', null]],
+    }) + contentSection('bg-white', `
+            <div class="max-w-4xl mx-auto">
+                ${fig('exposalud-2026-clinica.jpg', 'Equipo de Exámenes Digitales junto a la clínica móvil de mamografía en el acceso de Espacio Riesco', 1153, 1400, 'Nuestro equipo junto a la clínica móvil de mamografía, instalada en el espacio exterior de Espacio Riesco, junto a la entrada de la feria.')}
+
+                <div class="mt-12 space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p class="text-xl text-[#163A5F] font-semibold">ExpoSalud 2026 tuvo como eje temático el cáncer, y para Exámenes Digitales fue la oportunidad de mostrar en terreno lo que hacemos todos los días: llevar el examen hasta donde está la paciente.</p>
+                    <p>La unidad móvil se instaló en el espacio exterior del recinto, junto a la entrada, y permaneció abierta durante las tres jornadas. Los visitantes pudieron recorrer su interior, conocer el mamógrafo digital y el ecógrafo portátil con que realizamos los operativos, y comprobar que la unidad reúne en pocos metros cuadrados las condiciones de un servicio de imagenología: sala de examen con blindaje radiológico, estación de adquisición y espacio de atención para la paciente.</p>
+                </div>
+
+                <h2 class="text-3xl font-black text-[#163A5F] mt-14 mb-6">Recorridos por la clínica móvil</h2>
+                ${fig('exposalud-2026-interior.jpg', 'Recorrido guiado por el interior de la clínica móvil de mamografía, con el mamógrafo digital y el ecógrafo portátil', 1400, 1399, 'Recorrido por el interior de la unidad: sala de mamografía digital, ecógrafo portátil y estación de adquisición.')}
+                <div class="mt-8 space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>Nuestro equipo técnico explicó en cada recorrido cómo se organiza un operativo: la coordinación previa con el municipio, el servicio de salud o la empresa; la citación de las pacientes; la atención de hasta 50 mamografías por jornada; y la entrega de los informes radiológicos en uno a dos días hábiles, con aviso inmediato a la contraparte institucional ante hallazgos críticos.</p>
+                    <p>En los recorridos abordamos dos necesidades que vemos a diario: reducir listas de espera de mamografía y ecografía en la atención primaria, y facilitar a las empresas el cumplimiento del permiso preventivo que establece el artículo 66 bis del Código del Trabajo, concentrando en una sola jornada exámenes que de otro modo se dispersarían en semanas.</p>
+                </div>
+
+                <h2 class="text-3xl font-black text-[#163A5F] mt-14 mb-6">Nuestro stand en el pabellón</h2>
+                ${fig('exposalud-2026-stand.jpg', 'Stand de Exámenes Digitales en ExpoSalud 2026, con muro de marca, pantalla con video institucional y material informativo', 1129, 1074, 'El stand de Exámenes Digitales, con nuestro video institucional y material informativo sobre detección precoz.')}
+                <div class="mt-8 space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>En el stand del pabellón presentamos nuestros servicios de mamografía móvil, ecografía en terreno, cumplimiento GES y apoyo a centros médicos, y entregamos material informativo sobre la clasificación BI-RADS para que las pacientes comprendan mejor el resultado de su mamografía.</p>
+                    <p>Agradecemos a la organización de ExpoSalud, a quienes nos visitaron y a nuestro equipo, que hizo posible mostrar la clínica móvil en pleno funcionamiento. Si conversamos en la feria, lo invitamos a retomar el contacto para planificar su próximo operativo.</p>
+                </div>
+
+                <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="/cotizar/?tipo=Operativo%20de%20salud%20para%20empresa&servicio=Contacto%20desde%20ExpoSalud%202026" class="block bg-[#163A5F] text-white rounded-3xl p-8 hover:bg-[#0c73ba] transition-colors">
+                        <span class="text-[#55c5e9] font-black tracking-widest uppercase text-xs">¿Nos visitó en la feria?</span>
+                        <span class="block text-2xl font-black mt-2 mb-3">Retomemos la conversación</span>
+                        <span class="block text-blue-100">Cuéntenos qué necesita su comuna, servicio de salud o empresa y le enviamos una propuesta.</span>
+                    </a>
+                    <a href="/mamografia-movil/" class="block bg-[#F8FAFC] border border-gray-200 rounded-3xl p-8 hover:border-[#0c73ba] transition-colors">
+                        <span class="text-[#0c73ba] font-black tracking-widest uppercase text-xs">Conozca el servicio</span>
+                        <span class="block text-2xl font-black text-[#163A5F] mt-2 mb-3">Mamografía móvil</span>
+                        <span class="block text-gray-600">Cómo funciona la clínica móvil, qué requiere su institución y cómo se entregan los resultados.</span>
+                    </a>
+                </div>
             </div>
 `) + ctaBand('Lleve la detección precoz a su comuna o empresa', 'Cuéntenos cuántas pacientes necesita atender y en qué plazo; le propondremos un operativo a la medida.', 'Solicitar cotización'),
   });
@@ -995,6 +1070,7 @@ const urls = [
   { loc: '/blog/', priority: '0.6', freq: 'weekly' },
   { loc: '/blog/como-se-realiza-un-operativo-de-mamografia-movil/', priority: '0.6', freq: 'yearly' },
   { loc: '/blog/examenes-digitales-en-exposalud-2026/', priority: '0.7', freq: 'monthly' },
+  { loc: '/blog/exposalud-2026-balance/', priority: '0.7', freq: 'monthly' },
 ];
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
